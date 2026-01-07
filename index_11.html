@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferma Agents | Market Intelligence That Works for You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,100,900,300,200&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    html {
+      overflow-x: hidden;
+    }
+
+    body {
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    .focus\:not-sr-only:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: inherit;
+      margin: inherit;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+    }
+
+    .footer-link:hover {
+      color: #fff !important;
+    }
+
+    .footer-link:focus {
+      outline: 2px solid #7B61FF;
+      outline-offset: 2px;
+      color: #fff;
+    }
+
+    @keyframes flowRight {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(960px);
+      }
+    }
+
+    @keyframes pulseDots {
+
+      0%,
+      100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .data-flow-1 {
+      animation: flowRight 28s linear infinite;
+      animation-delay: -3s;
+    }
+
+    .data-flow-2 {
+      animation: flowRight 28s linear infinite;
+      animation-delay: -9s;
+    }
+
+    .data-flow-3 {
+      animation: flowRight 28s linear infinite;
+      animation-delay: -15s;
+    }
+
+    .data-flow-4 {
+      animation: flowRight 28s linear infinite;
+      animation-delay: -21s;
+    }
+
+    .window-dot-1 {
+      animation: pulseDots 2s ease-in-out infinite;
+    }
+
+    .window-dot-2 {
+      animation: pulseDots 2s ease-in-out infinite;
+      animation-delay: 0.3s;
+    }
+
+    .window-dot-3 {
+      animation: pulseDots 2s ease-in-out infinite;
+      animation-delay: 0.6s;
+    }
+
+    @keyframes pulseDiamond {
+
+      0%,
+      100% {
+        transform-origin: 430px 320px;
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px rgba(123, 97, 255, 0));
+      }
+
+      50% {
+        transform-origin: 430px 320px;
+        transform: scale(1.03);
+        filter: drop-shadow(0 0 6px rgba(123, 97, 255, 0.3));
+      }
+    }
+
+    .diamond-pulse {
+      animation: pulseDiamond 2s ease-in-out infinite;
+      animation-delay: 0s;
+    }
+
+    .dot-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      fill: #000000;
+    }
+
+    /* Dropdown Navigation Styles */
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+    }
+
+    .nav-dropdown:hover .nav-trigger svg {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-item:hover {
+      background: rgba(123, 97, 255, 0.06) !important;
+    }
+
+    .nav-trigger {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #F7F5FF;
+      padding: 24px;
+      z-index: 999;
+      overflow-y: auto;
+    }
+
+    .mobile-nav.active {
+      display: block;
+    }
+
+    .mobile-nav-section {
+      margin-bottom: 24px;
+    }
+
+    .mobile-nav-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #000;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .mobile-nav-link {
+      display: block;
+      padding: 12px 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: #000;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    .mobile-nav-link:hover {
+      color: #7B61FF;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .hero-container {
+        gap: 60px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      .hero-text {
+        flex: 1 1 auto !important;
+        max-width: none !important;
+      }
+
+      .hero-svg {
+        width: 450px !important;
+        height: auto !important;
+      }
+
+      .benefits-row {
+        width: calc(100% - 40px) !important;
+        max-width: 900px !important;
+        box-sizing: border-box !important;
+      }
+
+      .comparison-container {
+        width: calc(100% - 40px) !important;
+        max-width: 900px !important;
+        box-sizing: border-box !important;
+      }
+
+      .product-preview {
+        width: calc(100% - 40px) !important;
+        max-width: 900px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      /* Header */
+      .desktop-nav {
+        display: none !important;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      header nav {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      /* Main content */
+      main.max-w-7xl {
+        padding: 0 !important;
+      }
+
+      /* Hero Section */
+      .hero-container {
+        flex-direction: column !important;
+        gap: 24px !important;
+        padding: 24px 20px !important;
+        text-align: left;
+        align-items: stretch !important;
+      }
+
+      .hero-text {
+        flex: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+
+      .hero-text h1 {
+        font-size: 26px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .hero-text p {
+        margin-bottom: 20px !important;
+      }
+
+      .hero-text .flex {
+        justify-content: flex-start;
+      }
+
+      .hero-svg-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .hero-svg {
+        width: 100% !important;
+        max-width: 360px !important;
+        height: auto !important;
+      }
+
+      /* Product Preview */
+      .product-preview {
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+      }
+
+      .product-preview iframe {
+        height: 400px !important;
+      }
+
+      /* Benefits Section */
+      .benefits-section {
+        padding: 24px 20px !important;
+      }
+
+      .benefits-section h2 {
+        font-size: 22px !important;
+        padding: 0 !important;
+        margin-bottom: 24px !important;
+        text-align: left;
+      }
+
+      .benefits-row {
+        flex-direction: column !important;
+        gap: 16px !important;
+        width: 100% !important;
+        margin: 0 0 24px 0 !important;
+        padding: 0 !important;
+      }
+
+      .benefits-row:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      .benefits-row.reverse {
+        flex-direction: column !important;
+      }
+
+      .benefits-text,
+      .benefits-image {
+        flex: none !important;
+        width: 100% !important;
+      }
+
+      .benefits-text {
+        text-align: left;
+      }
+
+      .benefits-text h3 {
+        font-size: 18px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .benefits-image {
+        height: 180px !important;
+        order: -1;
+      }
+
+      /* Comparison Section */
+      .comparison-section {
+        padding: 24px 20px !important;
+      }
+
+      .comparison-section h2 {
+        font-size: 22px !important;
+        padding: 0 !important;
+        margin-bottom: 12px !important;
+        text-align: left;
+      }
+
+      .comparison-section>p {
+        font-size: 14px !important;
+        padding: 0 !important;
+        margin-bottom: 20px !important;
+        text-align: left;
+      }
+
+      .comparison-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+
+      /* Mobile table to cards */
+      .comparison-table {
+        display: block !important;
+        width: 100% !important;
+        min-width: unset !important;
+        background: transparent !important;
+      }
+
+      .comparison-table colgroup,
+      .comparison-table thead {
+        display: none !important;
+      }
+
+      .comparison-table tbody {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        background: transparent !important;
+      }
+
+      .comparison-table tbody tr {
+        display: flex !important;
+        flex-direction: column !important;
+        background: #fff !important;
+        border-radius: 12px !important;
+        padding: 16px !important;
+        border: 1px solid #eee !important;
+      }
+
+      .comparison-table tbody tr th[scope="row"] {
+        font-size: 14px !important;
+        color: #000 !important;
+        font-weight: 600 !important;
+        padding: 0 0 12px 0 !important;
+        border: none !important;
+        text-align: left !important;
+        background: #fff !important;
+      }
+
+      .comparison-table tbody tr td {
+        padding: 12px !important;
+        border: none !important;
+        border-radius: 8px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .comparison-table tbody tr td[data-label="Cortellis"] {
+        background: #F7F5FF !important;
+      }
+
+      .comparison-table tbody tr td[data-label="Ferma Agents"] {
+        background: rgba(123, 97, 255, 0.1) !important;
+        margin-bottom: 0 !important;
+      }
+
+      .comparison-table tbody tr td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+      }
+
+      .comparison-table tbody tr td[data-label="Cortellis"]::before {
+        color: #000;
+      }
+
+      .comparison-table tbody tr td[data-label="Ferma Agents"]::before {
+        color: #7B61FF;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 24px 20px !important;
+        text-align: left !important;
+        align-items: flex-start !important;
+      }
+
+      .cta-section h2 {
+        font-size: 22px !important;
+        margin-bottom: 16px !important;
+        text-align: left !important;
+      }
+
+      /* Footer */
+      .footer-content {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        height: auto !important;
+        padding: 20px !important;
+      }
+
+      .footer-logo {
+        flex: none !important;
+        width: auto !important;
+      }
+
+      .footer-links {
+        flex: none !important;
+        width: auto !important;
+        justify-content: flex-start !important;
+        flex-wrap: wrap;
+        gap: 12px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header nav {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      .hero-container {
+        padding: 20px 16px !important;
+        gap: 20px !important;
+      }
+
+      .hero-text h1 {
+        font-size: 22px !important;
+      }
+
+      .hero-text p {
+        font-size: 14px !important;
+      }
+
+      .hero-svg {
+        max-width: 280px !important;
+      }
+
+      .product-preview iframe {
+        height: 280px !important;
+      }
+
+      .benefits-section {
+        padding: 20px 16px !important;
+      }
+
+      .benefits-section h2 {
+        font-size: 20px !important;
+        margin-bottom: 20px !important;
+      }
+
+      .benefits-row {
+        margin-bottom: 20px !important;
+        gap: 12px !important;
+      }
+
+      .benefits-image {
+        height: 160px !important;
+      }
+
+      .benefits-text h3 {
+        font-size: 16px !important;
+      }
+
+      .benefits-text p {
+        font-size: 14px !important;
+      }
+
+      .comparison-section {
+        padding: 20px 16px !important;
+      }
+
+      .comparison-section h2 {
+        font-size: 20px !important;
+      }
+
+      .comparison-section>p {
+        font-size: 13px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .comparison-table tbody tr {
+        padding: 12px !important;
+      }
+
+      .comparison-table tbody tr td {
+        padding: 10px !important;
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 6px !important;
+      }
+
+      .comparison-table tbody tr td[data-label="Ferma Agents"] {
+        margin-bottom: 0 !important;
+      }
+
+      .comparison-table tbody tr th[scope="row"] {
+        font-size: 13px !important;
+        padding-bottom: 8px !important;
+      }
+
+      .cta-section {
+        padding: 20px 16px !important;
+      }
+
+      .cta-section h2 {
+        font-size: 20px !important;
+      }
+
+      .footer-content {
+        padding: 16px !important;
+      }
+
+      .footer-links {
+        gap: 8px !important;
+        font-size: 13px !important;
+      }
+
+      .footer-links span {
+        display: none;
+      }
+
+      /* Cookie Banner Mobile Styles */
+      #cookie-consent-banner {
+        padding: 20px 16px !important;
+      }
+
+      #cookie-consent-banner > div {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+
+      #cookie-consent-banner > div > div:last-child {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      #cookie-consent-banner button {
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #e5e7eb; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); z-index: 10000; padding: 24px 32px;">
+    <button onclick="closeCookieBanner()" style="position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; font-size: 20px; color: #666; padding: 4px;">&times;</button>
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 16px; color: #000; margin: 0 0 12px 0;">Privacy Center Notification</h3>
+        <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #4B5563; line-height: 1.6; margin: 0;">
+          We and our partners use cookies and other tracking technologies to operate our website as well as improve your experience on our website. We may store and/or access information on a device and process personal data, such as your IP address and browsing data, for personalized advertising and content, advertising and content measurement, audience research and services development. Additionally, we may utilize precise geolocation data and identification through device scanning. Your consent will be stored for this website. You cannot opt out of our strictly necessary cookies as they are deployed in order to ensure the proper functioning of our website (such as prompting the cookie banner). We respect your choices and are committed to providing you with a transparent and secure browsing experience.
+        </p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
+        <button onclick="openCustomizeModal()" style="padding: 10px 24px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #1a56db; background: #fff; border: 1px solid #1a56db; border-radius: 4px; cursor: pointer; transition: all 0.2s;">Customise</button>
+        <button onclick="rejectAllCookies()" style="padding: 10px 24px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #fff; background: #1a56db; border: 1px solid #1a56db; border-radius: 4px; cursor: pointer; transition: all 0.2s;">Reject All</button>
+        <button onclick="acceptAllCookies()" style="padding: 10px 24px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #fff; background: #1a56db; border: 1px solid #1a56db; border-radius: 4px; cursor: pointer; transition: all 0.2s;">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Customization Modal -->
+  <div id="cookie-customize-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 10001; justify-content: center; align-items: center;">
+    <div style="background: #fff; border-radius: 8px; max-width: 600px; width: 90%; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+      <!-- Modal Header -->
+      <div style="padding: 20px 24px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; color: #000; margin: 0;">Customise Consent Preferences</h2>
+        <button onclick="closeCustomizeModal()" style="background: none; border: none; cursor: pointer; font-size: 24px; color: #666; padding: 0; line-height: 1;">&times;</button>
+      </div>
+      
+      <!-- Modal Body -->
+      <div style="padding: 24px; overflow-y: auto; flex: 1;">
+        <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #4B5563; line-height: 1.6; margin: 0 0 16px 0;">
+          We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.
+        </p>
+        <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #4B5563; line-height: 1.6; margin: 0 0 24px 0;">
+          The cookies that are categorised as "Necessary" are stored on your browser as they are essential for enabling the basic functionalities of the site. <a href="#" onclick="toggleShowMore(event)" id="show-more-link" style="color: #1a56db; text-decoration: none;">Show more</a>
+          <span id="show-more-text" style="display: none;"> We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.</span>
+        </p>
+
+        <!-- Necessary Cookies -->
+        <div style="border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 12px;">
+          <div onclick="toggleAccordion('necessary')" style="padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; background: #f9fafb; border-radius: 8px 8px 0 0;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span id="necessary-arrow" style="color: #666; font-size: 12px; transition: transform 0.2s;">▶</span>
+              <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 15px; color: #000;">Necessary</span>
+            </div>
+            <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; color: #22c55e; font-weight: 500;">Always Active</span>
+          </div>
+          <div id="necessary-content" style="display: none; padding: 16px; border-top: 1px solid #e5e7eb;">
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #4B5563; line-height: 1.6; margin: 0;">
+              Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.
+            </p>
+          </div>
+        </div>
+
+        <!-- Functional Cookies -->
+        <div style="border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 12px;">
+          <div onclick="toggleAccordion('functional')" style="padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span id="functional-arrow" style="color: #666; font-size: 12px; transition: transform 0.2s;">▶</span>
+              <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 15px; color: #000;">Functional</span>
+            </div>
+            <label class="cookie-toggle" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+              <input type="checkbox" id="functional-toggle" style="opacity: 0; width: 0; height: 0;">
+              <span class="cookie-slider" onclick="event.stopPropagation();" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: 0.3s; border-radius: 24px;"></span>
+            </label>
+          </div>
+          <div id="functional-content" style="display: none; padding: 16px; border-top: 1px solid #e5e7eb;">
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #4B5563; line-height: 1.6; margin: 0;">
+              Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.
+            </p>
+          </div>
+        </div>
+
+        <!-- Analytics Cookies -->
+        <div style="border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 12px;">
+          <div onclick="toggleAccordion('analytics')" style="padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span id="analytics-arrow" style="color: #666; font-size: 12px; transition: transform 0.2s;">▶</span>
+              <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 15px; color: #000;">Analytics</span>
+            </div>
+            <label class="cookie-toggle" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+              <input type="checkbox" id="analytics-toggle" style="opacity: 0; width: 0; height: 0;">
+              <span class="cookie-slider" onclick="event.stopPropagation();" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: 0.3s; border-radius: 24px;"></span>
+            </label>
+          </div>
+          <div id="analytics-content" style="display: none; padding: 16px; border-top: 1px solid #e5e7eb;">
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #4B5563; line-height: 1.6; margin: 0;">
+              Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.
+            </p>
+          </div>
+        </div>
+
+        <!-- Performance Cookies -->
+        <div style="border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 12px;">
+          <div onclick="toggleAccordion('performance')" style="padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span id="performance-arrow" style="color: #666; font-size: 12px; transition: transform 0.2s;">▶</span>
+              <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 15px; color: #000;">Performance</span>
+            </div>
+            <label class="cookie-toggle" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+              <input type="checkbox" id="performance-toggle" style="opacity: 0; width: 0; height: 0;">
+              <span class="cookie-slider" onclick="event.stopPropagation();" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: 0.3s; border-radius: 24px;"></span>
+            </label>
+          </div>
+          <div id="performance-content" style="display: none; padding: 16px; border-top: 1px solid #e5e7eb;">
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #4B5563; line-height: 1.6; margin: 0;">
+              Performance cookies are used to understand and analyse the key performance indexes of the website which helps in delivering a better user experience for the visitors.
+            </p>
+          </div>
+        </div>
+
+        <!-- Advertisement Cookies -->
+        <div style="border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 12px;">
+          <div onclick="toggleAccordion('advertisement')" style="padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span id="advertisement-arrow" style="color: #666; font-size: 12px; transition: transform 0.2s;">▶</span>
+              <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 15px; color: #000;">Advertisement</span>
+            </div>
+            <label class="cookie-toggle" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+              <input type="checkbox" id="advertisement-toggle" style="opacity: 0; width: 0; height: 0;">
+              <span class="cookie-slider" onclick="event.stopPropagation();" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: 0.3s; border-radius: 24px;"></span>
+            </label>
+          </div>
+          <div id="advertisement-content" style="display: none; padding: 16px; border-top: 1px solid #e5e7eb;">
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #4B5563; line-height: 1.6; margin: 0;">
+              Advertisement cookies are used to provide visitors with customised advertisements based on the pages you visited previously and to analyse the effectiveness of the ad campaigns.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div style="padding: 16px 24px; border-top: 1px solid #e5e7eb; display: flex; justify-content: center; gap: 12px; background: #f9fafb;">
+        <button onclick="rejectAllFromModal()" style="flex: 1; max-width: 180px; padding: 12px 24px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 600; color: #fff; background: #1a56db; border: none; border-radius: 4px; cursor: pointer;">Reject All</button>
+        <button onclick="savePreferences()" style="flex: 1; max-width: 180px; padding: 12px 24px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 600; color: #fff; background: #1a56db; border: none; border-radius: 4px; cursor: pointer;">Save My Preferences</button>
+        <button onclick="acceptAllFromModal()" style="flex: 1; max-width: 180px; padding: 12px 24px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 600; color: #fff; background: #1a56db; border: none; border-radius: 4px; cursor: pointer;">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Toggle Switch Styles */
+    .cookie-toggle input:checked + .cookie-slider {
+      background-color: #1a56db;
+    }
+    .cookie-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+    .cookie-toggle input:checked + .cookie-slider:before {
+      transform: translateX(20px);
+    }
+  </style>
+
+  <script>
+    // Cookie Consent Functions
+    function setCookie(name, value, days) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+      document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/;SameSite=Lax';
+    }
+
+    function getCookie(name) {
+      const nameEQ = name + '=';
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    function showCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) banner.style.display = 'block';
+    }
+
+    function hideCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) banner.style.display = 'none';
+    }
+
+    function closeCookieBanner() {
+      hideCookieBanner();
+    }
+
+    function acceptAllCookies() {
+      setCookie('cookie_consent', 'accepted', 365);
+      setCookie('cookie_preferences', JSON.stringify({functional: true, analytics: true, performance: true, advertisement: true}), 365);
+      hideCookieBanner();
+      closeCustomizeModal();
+    }
+
+    function rejectAllCookies() {
+      setCookie('cookie_consent', 'rejected', 365);
+      setCookie('cookie_preferences', JSON.stringify({functional: false, analytics: false, performance: false, advertisement: false}), 365);
+      hideCookieBanner();
+      closeCustomizeModal();
+    }
+
+    // Modal Functions
+    function openCustomizeModal() {
+      const modal = document.getElementById('cookie-customize-modal');
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeCustomizeModal() {
+      const modal = document.getElementById('cookie-customize-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function acceptAllFromModal() {
+      document.getElementById('functional-toggle').checked = true;
+      document.getElementById('analytics-toggle').checked = true;
+      document.getElementById('performance-toggle').checked = true;
+      document.getElementById('advertisement-toggle').checked = true;
+      updateToggleStyles();
+      acceptAllCookies();
+    }
+
+    function rejectAllFromModal() {
+      document.getElementById('functional-toggle').checked = false;
+      document.getElementById('analytics-toggle').checked = false;
+      document.getElementById('performance-toggle').checked = false;
+      document.getElementById('advertisement-toggle').checked = false;
+      updateToggleStyles();
+      rejectAllCookies();
+    }
+
+    function savePreferences() {
+      const preferences = {
+        functional: document.getElementById('functional-toggle').checked,
+        analytics: document.getElementById('analytics-toggle').checked,
+        performance: document.getElementById('performance-toggle').checked,
+        advertisement: document.getElementById('advertisement-toggle').checked
+      };
+      setCookie('cookie_consent', 'custom', 365);
+      setCookie('cookie_preferences', JSON.stringify(preferences), 365);
+      hideCookieBanner();
+      closeCustomizeModal();
+    }
+
+    function updateToggleStyles() {
+      const toggles = ['functional', 'analytics', 'performance', 'advertisement'];
+      toggles.forEach(id => {
+        const input = document.getElementById(id + '-toggle');
+        const slider = input.nextElementSibling;
+        if (input.checked) {
+          slider.style.backgroundColor = '#1a56db';
+        } else {
+          slider.style.backgroundColor = '#ccc';
+        }
+      });
+    }
+
+    // Accordion Functions
+    function toggleAccordion(section) {
+      const content = document.getElementById(section + '-content');
+      const arrow = document.getElementById(section + '-arrow');
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        arrow.style.transform = 'rotate(90deg)';
+      } else {
+        content.style.display = 'none';
+        arrow.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    function toggleShowMore(event) {
+      event.preventDefault();
+      const text = document.getElementById('show-more-text');
+      const link = document.getElementById('show-more-link');
+      if (text.style.display === 'none') {
+        text.style.display = 'inline';
+        link.textContent = 'Show less';
+      } else {
+        text.style.display = 'none';
+        link.textContent = 'Show more';
+      }
+    }
+
+    // Initialize toggle click handlers
+    document.addEventListener('DOMContentLoaded', function() {
+      const consent = getCookie('cookie_consent');
+      if (!consent) {
+        showCookieBanner();
+      }
+
+      // Add click handlers to toggle sliders
+      const toggles = ['functional', 'analytics', 'performance', 'advertisement'];
+      toggles.forEach(id => {
+        const slider = document.querySelector('#' + id + '-toggle + .cookie-slider');
+        if (slider) {
+          slider.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const input = document.getElementById(id + '-toggle');
+            input.checked = !input.checked;
+            if (input.checked) {
+              this.style.backgroundColor = '#1a56db';
+            } else {
+              this.style.backgroundColor = '#ccc';
+            }
+          });
+        }
+      });
+
+      // Close modal when clicking outside
+      const modal = document.getElementById('cookie-customize-modal');
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeCustomizeModal();
+        }
+      });
+    });
+  </script>
+
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white">Skip
+    to main content</a>
+  <!-- Header -->
+  <header role="banner"
+    style="background-color: rgba(247, 245, 255, 0.9); position: fixed; top: 0; z-index: 1000; width: 100%; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.02);">
+    <nav role="navigation" aria-label="Main navigation" class="max-w-7xl mx-auto px-8">
+      <div
+        style="display: flex; align-items: center; justify-content: space-between; height: 56px; max-width: 1100px; margin: 0 auto;">
+        <!-- Left side: Logo + Nav -->
+        <div style="display: flex; align-items: center; gap: 48px;">
+          <!-- Logo -->
+          <a href="/" aria-label="Ferma Agents home"
+            style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <!-- Hand-drawn square with F logo -->
+              <path d="M 5 1
+                         C 8 0.5, 14 1.5, 20 1
+                         C 24 0.5, 26 1, 27 2
+                         C 27.5 4, 27 10, 27.5 16
+                         C 28 22, 27 25, 26 27
+                         C 24 27.5, 18 27, 12 27.5
+                         C 6 28, 2 27, 1 26
+                         C 0.5 24, 1 18, 0.5 12
+                         C 0 6, 1 2, 2 1
+                         C 3 0.5, 4 1, 5 1 Z" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <g transform="translate(3, 4) scale(0.045)">
+                <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+                <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+                <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+                <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+              </g>
+            </svg>
+            <span class="text-base font-semibold text-black" style="white-space: nowrap;">Ferma Agents</span>
+          </a>
+
+          <!-- Nav links -->
+          <div class="desktop-nav" style="display: flex; align-items: center; gap: 32px;">
+
+          </div>
+
+        </div>
+
+        <!-- Right side: Login button + Mobile menu -->
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <a href="https://agents.ferma.ai" target="_blank" rel="noopener noreferrer" aria-label="Log in to Ferma Agents"
+            class="px-4 py-1.5 text-sm font-medium text-white rounded tracking-wide hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+            style="background-color: #7B61FF; text-decoration: none; display: inline-block;">
+            Log In
+          </a>
+          <!-- Mobile menu button removed -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation removed -->
+  </header>
+
+  <script>
+    // Scroll to top on page load/refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // toggleMobileMenu removed as mobile nav is empty
+
+    // Hero Title Animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const headlines = [
+        "Critical Shift",
+        "Partnership Window",
+        "Pivotal Readout",
+        "Pipeline Movement",
+        "Narrative Change",
+        "Guideline Revision",
+        "Regulatory Surprise",
+      ];
+      let currentIndex = 0;
+      const headlineElement = document.getElementById('dynamic-headline');
+
+      if (headlineElement) {
+        setInterval(() => {
+          headlineElement.classList.remove('opacity-100', 'translate-y-0');
+          headlineElement.classList.add('opacity-0', 'translate-y-2');
+
+          setTimeout(() => {
+            currentIndex = (currentIndex + 1) % headlines.length;
+            headlineElement.textContent = headlines[currentIndex];
+            headlineElement.classList.remove('opacity-0', 'translate-y-2');
+            headlineElement.classList.add('opacity-100', 'translate-y-0');
+          }, 300);
+        }, 3000);
+      }
+    });
+  </script>
+
+  <div class="min-h-screen" style="background-color: #F7F5FF; padding-top: 56px;">
+    <!-- Hero Section - Side by Side -->
+    <main id="main-content" role="main" class="max-w-7xl mx-auto px-8" style="background-color: #F7F5FF;">
+      <div class="hero-container"
+        style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding-top: 80px; padding-bottom: 80px; width: 100%; max-width: 1100px; margin: 0 auto;">
+
+        <!-- LEFT - Hero Text -->
+        <div class="hero-text" style="flex: 0 0 500px; max-width: 500px;">
+          <h1 class="leading-tight tracking-tight text-black mb-6" style="font-size: 50px;">
+            <span
+              style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 32px; display: block; margin-bottom: 8px; letter-spacing: -0.01em;">Never
+              Miss a</span>
+
+            <span id="dynamic-headline" class="inline-block transition-all duration-300 opacity-100 translate-y-0"
+              style="font-family: 'Plus Jakarta Sans', sans-serif; color: #7B61FF; font-weight: 700; letter-spacing: -0.01em;">
+              Critical Shift
+            </span>
+          </h1>
+
+          <p class="text-lg text-black leading-relaxed mb-8">
+            Ferma Agents track market intelligence, run your workflows, and create deliverables.
+          </p>
+
+          <div class="flex items-center gap-4">
+            <a href="https://cal.com/ferma/ferma-agents-demo" target="_blank"
+              aria-label="Request a demo of Ferma Agents"
+              class="px-6 py-3 text-sm font-medium text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 flex items-center justify-center"
+              style="background-color: #7B61FF; text-decoration: none;">
+              Book a Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT - Hero Image -->
+        <div class="hero-svg-container" style="display: flex;" aria-hidden="true">
+          <svg class="hero-svg" width="500" height="360" viewBox="0 0 860 615" fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Visualization of Ferma Agents workflow system showing data flows and workflow boxes">
+            <!-- 13 Hand-drawn style horizontal lines -->
+            <g stroke="#CCCCCC" stroke-width="1" opacity="0.5" stroke-dasharray="4 3" fill="none"
+              stroke-linecap="round">
+              <path
+                d="M 0 50 C 80 48, 160 52, 240 50 C 320 48, 400 52, 480 50 C 560 48, 640 52, 720 50 C 800 48, 840 51, 860 50" />
+              <path
+                d="M 0 95 C 70 97, 150 93, 230 95 C 310 97, 390 93, 470 95 C 550 97, 630 93, 710 95 C 790 97, 830 94, 860 95" />
+              <path
+                d="M 0 140 C 85 138, 170 142, 255 140 C 340 138, 425 142, 510 140 C 595 138, 680 142, 765 140 C 820 138, 845 141, 860 140" />
+              <path
+                d="M 0 185 C 75 187, 155 183, 235 185 C 315 187, 395 183, 475 185 C 555 187, 635 183, 715 185 C 795 187, 835 184, 860 185" />
+              <path
+                d="M 0 230 C 90 228, 175 232, 260 230 C 345 228, 430 232, 515 230 C 600 228, 685 232, 770 230 C 825 228, 850 231, 860 230" />
+              <path
+                d="M 0 275 C 65 277, 145 273, 225 275 C 305 277, 385 273, 465 275 C 545 277, 625 273, 705 275 C 785 277, 830 274, 860 275" />
+              <path
+                d="M 0 320 C 95 318, 180 322, 270 320 C 360 318, 450 322, 540 320 C 630 318, 720 322, 790 320 C 835 318, 852 321, 860 320" />
+              <path
+                d="M 0 365 C 70 367, 160 363, 250 365 C 340 367, 430 363, 520 365 C 610 367, 700 363, 780 365 C 830 367, 848 364, 860 365" />
+              <path
+                d="M 0 410 C 85 408, 165 412, 245 410 C 325 408, 405 412, 485 410 C 565 408, 645 412, 725 410 C 805 408, 840 411, 860 410" />
+              <path
+                d="M 0 455 C 75 457, 155 453, 235 455 C 315 457, 395 453, 475 455 C 555 457, 635 453, 715 455 C 795 457, 838 454, 860 455" />
+              <path
+                d="M 0 500 C 90 498, 170 502, 250 500 C 330 498, 410 502, 490 500 C 570 498, 650 502, 730 500 C 810 498, 842 501, 860 500" />
+              <path
+                d="M 0 545 C 80 547, 160 543, 240 545 C 320 547, 400 543, 480 545 C 560 547, 640 543, 720 545 C 800 547, 836 544, 860 545" />
+              <path
+                d="M 0 590 C 85 588, 175 592, 265 590 C 355 588, 445 592, 535 590 C 625 588, 715 592, 785 590 C 830 588, 850 591, 860 590" />
+            </g>
+
+            <!-- Flowing dots -->
+            <g class="data-flow-1">
+              <circle cx="-50" cy="95" r="2.5" fill="#7B61FF" opacity="0.5" />
+              <circle cx="-500" cy="95" r="2.5" fill="#3D3D3D" opacity="0.4" />
+            </g>
+            <g class="data-flow-2">
+              <circle cx="-150" cy="275" r="2.5" fill="#3D3D3D" opacity="0.4" />
+              <circle cx="-600" cy="275" r="2.5" fill="#7B61FF" opacity="0.5" />
+            </g>
+            <g class="data-flow-3">
+              <circle cx="-100" cy="410" r="2.5" fill="#7B61FF" opacity="0.45" />
+              <circle cx="-550" cy="410" r="2.5" fill="#3D3D3D" opacity="0.4" />
+            </g>
+            <g class="data-flow-4">
+              <circle cx="-200" cy="545" r="2.5" fill="#3D3D3D" opacity="0.4" />
+              <circle cx="-650" cy="545" r="2.5" fill="#7B61FF" opacity="0.45" />
+            </g>
+
+            <!-- ASYMMETRIC SPARSE DOTS with labels -->
+
+            <!-- Line 1 (y=50) -->
+            <circle cx="45" cy="50" r="6" fill="#7B61FF" />
+            <g>
+              <rect x="55" y="39" width="95" height="18" fill="#F7F5FF" />
+              <text class="dot-label" x="58" y="53">Clinical Trials</text>
+            </g>
+            <circle cx="320" cy="50" r="5" fill="#3D3D3D" />
+            <g>
+              <rect x="330" y="39" width="115" height="18" fill="#F7F5FF" />
+              <text class="dot-label" x="333" y="53">Investor Reports</text>
+            </g>
+            <circle cx="580" cy="50" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
+
+            <!-- Line 2 (y=95) -->
+            <circle cx="250" cy="95" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
+            <circle cx="720" cy="95" r="6" fill="#7B61FF" />
+            <g>
+              <rect x="590" y="84" width="100" height="18" fill="#F7F5FF" />
+              <text class="dot-label" x="593" y="98">Earnings Calls</text>
+            </g>
+
+            <!-- Line 3 (y=140) -->
+            <circle cx="60" cy="140" r="5" fill="#3D3D3D" />
+            <circle cx="780" cy="140" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
+
+            <!-- Line 4 (y=185) -->
+            <circle cx="45" cy="185" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
+            <g>
+              <rect x="55" y="174" width="85" height="18" fill="#F7F5FF" />
+              <text class="dot-label" x="58" y="188">SEC Filings</text>
+            </g>
+
+            <!-- Line 5 (y=230) -->
+            <circle cx="820" cy="230" r="6" fill="#7B61FF" />
+
+            <!-- Line 6 (y=275) -->
+            <circle cx="55" cy="275" r="5" fill="#3D3D3D" />
+
+            <!-- Line 7 (y=320) -->
+            <circle cx="820" cy="320" r="5" fill="#3D3D3D" />
+            <g>
+              <rect x="680" y="309" width="125" height="18" fill="#F7F5FF" />
+              <text class="dot-label" x="683" y="323">Regulatory Bodies</text>
+            </g>
+
+            <!-- Line 8 (y=365) -->
+            <circle cx="40" cy="365" r="6" fill="#7B61FF" />
+
+            <!-- Line 9 (y=410) -->
+            <circle cx="820" cy="410" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
+
+            <!-- Line 10 (y=455) -->
+            <circle cx="50" cy="455" r="5" fill="#3D3D3D" />
+            <g>
+              <rect x="60" y="444" width="105" height="18" fill="#F7F5FF" />
+              <text class="dot-label" x="63" y="458">Pipeline Pages</text>
+            </g>
+
+            <!-- Line 11 (y=500) -->
+            <circle cx="785" cy="500" r="6" fill="#7B61FF" />
+
+            <!-- Line 12 (y=545) -->
+            <circle cx="55" cy="545" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
+            <circle cx="280" cy="545" r="6" fill="#7B61FF" />
+            <g>
+              <rect x="292" y="534" width="110" height="18" fill="#F7F5FF" />
+              <text class="dot-label" x="295" y="548">Corporate Decks</text>
+            </g>
+            <circle cx="620" cy="545" r="5" fill="#3D3D3D" />
+
+            <!-- Line 13 (y=590) -->
+            <circle cx="140" cy="590" r="5" fill="#3D3D3D" />
+            <g>
+              <rect x="150" y="579" width="115" height="18" fill="#F7F5FF" />
+              <text class="dot-label" x="153" y="593">Chinese BioTechs</text>
+            </g>
+            <circle cx="500" cy="590" r="6" fill="#7B61FF" />
+            <g>
+              <rect x="510" y="579" width="105" height="18" fill="#F7F5FF" />
+              <text class="dot-label" x="513" y="593">Press Releases</text>
+            </g>
+            <circle cx="830" cy="590" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
+            <g>
+              <rect x="700" y="579" width="100" height="18" fill="#F7F5FF" />
+              <text class="dot-label" x="703" y="593">Patent Filings</text>
+            </g>
+
+            <!-- CENTER SQUARE WITH LOGO -->
+            <g class="diamond-pulse" style="transform-origin: 0 0;">
+              <path d="M 410 300
+                       C 414 299.5, 424 300.5, 432 300
+                       C 442 299.5, 449 300, 452 302
+                       C 453 305, 452 314, 453 324
+                       C 454 334, 452 342, 450 344
+                       C 447 345, 439 344, 430 345
+                       C 421 346, 413 344, 410 343
+                       C 408 341, 409 332, 408 320
+                       C 407 308, 409 302, 410 300
+                       C 411 299, 410 300, 410 300 Z" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <g transform="translate(414, 307) scale(0.07)">
+                <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+                <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+                <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+                <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+              </g>
+            </g>
+
+            <!-- BOX 1 - CI Workflows -->
+            <g transform="translate(172, 130)">
+              <rect x="0" y="0" width="230" height="160" rx="6" fill="#FFFFFF" />
+              <path d="M 8 2
+                       C 50 0, 90 3, 115 1
+                       C 150 -1, 180 2, 222 1
+                       C 227 1, 229 3, 229 8
+                       C 231 45, 228 85, 230 115
+                       C 232 140, 229 152, 228 155
+                       C 227 159, 224 160, 218 159
+                       C 170 161, 120 158, 70 160
+                       C 40 161, 15 159, 8 158
+                       C 3 158, 1 155, 1 150
+                       C -1 110, 2 70, 0 40
+                       C -1 20, 1 8, 2 5
+                       C 3 2, 5 1, 8 2 Z" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+
+              <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#7B61FF" />
+              <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D" />
+              <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#AAAAAA" stroke-width="1.5" />
+
+              <text font-family="'JetBrains Mono', monospace" font-size="22" font-weight="500" fill="#7B61FF">
+                <tspan x="18" y="50">CI Workflows</tspan>
+              </text>
+
+              <text font-family="'JetBrains Mono', monospace" font-size="18" fill="#000000">
+                <tspan x="18" y="80">Market Landscape</tspan>
+                <tspan x="18" y="102">Competitive Strategy</tspan>
+                <tspan x="18" y="124">Catalyst Monitoring</tspan>
+              </text>
+            </g>
+
+            <!-- BOX 2 - BD Workflows -->
+            <g transform="translate(458, 130)">
+              <rect x="0" y="0" width="230" height="160" rx="6" fill="#FFFFFF" />
+              <path d="M 10 1
+                       C 55 3, 100 0, 140 2
+                       C 175 3, 200 0, 220 2
+                       C 226 2, 229 4, 229 10
+                       C 228 50, 231 90, 229 120
+                       C 228 145, 230 155, 228 157
+                       C 226 160, 222 160, 215 159
+                       C 165 158, 115 161, 65 159
+                       C 35 158, 12 160, 6 159
+                       C 2 159, 0 156, 1 150
+                       C 2 115, -1 75, 1 45
+                       C 2 20, 0 8, 1 4
+                       C 2 1, 5 0, 10 1 Z" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+
+              <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#7B61FF" />
+              <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D" />
+              <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#AAAAAA" stroke-width="1.5" />
+
+              <text font-family="'JetBrains Mono', monospace" font-size="22" font-weight="500" fill="#7B61FF">
+                <tspan x="18" y="50">BD Workflows</tspan>
+              </text>
+
+              <text font-family="'JetBrains Mono', monospace" font-size="18" fill="#000000">
+                <tspan x="18" y="80">Deal Evaluation</tspan>
+                <tspan x="18" y="102">Endpoint Analysis</tspan>
+                <tspan x="18" y="124">Trial Forecasting</tspan>
+              </text>
+            </g>
+
+            <!-- BOX 3 - Medical Workflows -->
+            <g transform="translate(172, 350)">
+              <rect x="0" y="0" width="230" height="160" rx="6" fill="#FFFFFF" />
+              <path d="M 7 1
+                       C 60 -1, 105 3, 145 1
+                       C 185 -1, 210 2, 223 1
+                       C 228 1, 230 4, 230 9
+                       C 229 55, 231 95, 229 130
+                       C 228 148, 231 156, 229 158
+                       C 227 161, 223 160, 217 160
+                       C 160 159, 105 162, 55 160
+                       C 30 159, 10 161, 5 159
+                       C 1 158, -1 155, 0 148
+                       C 1 105, -1 65, 1 35
+                       C 2 15, -1 6, 1 3
+                       C 2 1, 4 0, 7 1 Z" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+
+              <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#7B61FF" />
+              <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D" />
+              <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#AAAAAA" stroke-width="1.5" />
+
+              <text font-family="'JetBrains Mono', monospace" font-size="22" font-weight="500" fill="#7B61FF">
+                <tspan x="18" y="50">Medical Workflows</tspan>
+              </text>
+
+              <text font-family="'JetBrains Mono', monospace" font-size="18" fill="#000000">
+                <tspan x="18" y="80">Evidence Gap ID</tspan>
+                <tspan x="18" y="102">SoC Benchmarking</tspan>
+                <tspan x="18" y="124">Target Product Profile</tspan>
+              </text>
+            </g>
+
+            <!-- BOX 4 - Custom Workflows -->
+            <g transform="translate(458, 350)">
+              <rect x="0" y="0" width="230" height="160" rx="6" fill="#FFFFFF" />
+              <path d="M 9 2
+                       C 50 0, 95 3, 135 1
+                       C 180 -1, 205 2, 221 1
+                       C 227 1, 230 3, 230 8
+                       C 231 48, 228 92, 230 125
+                       C 231 147, 229 156, 228 158
+                       C 226 161, 221 160, 214 159
+                       C 168 161, 112 158, 62 160
+                       C 32 161, 14 159, 7 158
+                       C 2 158, 0 154, 0 149
+                       C 1 108, -1 68, 1 38
+                       C 2 18, 0 7, 1 4
+                       C 2 1, 5 1, 9 2 Z" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+
+              <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#7B61FF" />
+              <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D" />
+              <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#AAAAAA" stroke-width="1.5" />
+
+              <text font-family="'JetBrains Mono', monospace" font-size="22" font-weight="500" fill="#7B61FF">
+                <tspan x="18" y="50">Custom Workflows</tspan>
+              </text>
+
+              <text font-family="'JetBrains Mono', monospace" font-size="18" fill="#000000">
+                <tspan x="18" y="80">Build your own</tspan>
+                <tspan x="18" y="102">workflows tailored to</tspan>
+                <tspan x="18" y="124">your needs...</tspan>
+              </text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Product Preview Section -->
+      <section aria-label="Product preview" style="padding: 60px 0; display: flex; justify-content: center;">
+        <div class="product-preview"
+          style="width: 1100px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.1);">
+          <iframe src="https://vm1689.github.io/fa-v11/" width="100%" height="700" style="border: none; display: block;"
+            title="Ferma Agents Product Preview" aria-label="Interactive preview of Ferma Agents platform">
+          </iframe>
+        </div>
+      </section>
+
+      <!-- Benefits Section -->
+      <section class="benefits-section" aria-labelledby="benefits-heading"
+        style="padding: 80px 0; display: flex; flex-direction: column; align-items: center; background-color: #F7F5FF;">
+
+        <div class="max-w-7xl mx-auto px-8" style="width: 100%;">
+          <!-- Section Title -->
+          <div style="text-align: center; max-width: 1000px; margin: 0 auto 60px auto;">
+            <h2 id="benefits-heading" class="mb-6 leading-tight" style="text-align: center;">
+              <span
+                style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 50px; display: block; margin-bottom: 8px; letter-spacing: -0.01em; color: #000;">You
+                Own the <span style="color: #7B61FF; font-style: italic;">So What</span></span>
+              <span
+                style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 32px; display: block; letter-spacing: -0.01em; color: #000;">While
+                Agents do the Grunt Work</span>
+            </h2>
+          </div>
+
+          <!-- Benefit 1: Monitoring -->
+          <div class="benefits-row" style="display: flex; align-items: center; gap: 100px; margin-bottom: 80px;">
+            <div class="benefits-text" style="flex: 1;">
+
+              <h3 class="text-2xl font-semibold text-black mb-6"
+                style="font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.01em;">Catch Early Signals</h3>
+              <p class="text-lg text-black leading-relaxed">
+                The best intel isn't in the news. Agents monitor hard-to-reach sources 24/7, scanning 100+ conferences
+                and on-ground Chinese intel so you spot signals others miss.
+              </p>
+            </div>
+            <div class="benefits-visual"
+              style="flex: 1; height: 420px; background: white; border-radius: 24px; box-shadow: 0 32px 64px -12px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.04); overflow: hidden; position: relative;">
+              <!-- Header -->
+              <div
+                style="padding: 24px 32px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center;">
+                <div
+                  style="font-weight: 600; color: #1a1a1a; font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.01em;">
+                  Signal
+                  Monitor
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <div
+                    style="width: 8px; height: 8px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);">
+                  </div>
+                  <span style="font-size: 13px; color: #000; font-weight: 500;">Live</span>
+                </div>
+              </div>
+              <!-- Content -->
+              <div style="padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+                <!-- Item 1 (Active) -->
+                <div
+                  style="padding: 20px; background: #F8F9FC; border-radius: 12px; border-left: 4px solid #7B61FF; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                    <span
+                      style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #7B61FF; letter-spacing: 0.05em;">ClinicalTrials.gov</span>
+                    <span style="font-size: 12px; color: #000;">Just now</span>
+                  </div>
+                  <div style="font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px;">Phase 3 Primary
+                    Endpoint Changed</div>
+                  <div style="font-size: 13px; color: #000;">Oncology • Drug-X • Competitor Y</div>
+                </div>
+                <!-- Item 2 -->
+                <div style="padding: 20px; background: #fff; border: 1px solid #f0f0f0; border-radius: 12px;">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                    <span
+                      style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #000; letter-spacing: 0.05em;">SEC
+                      Filings</span>
+                    <span style="font-size: 12px; color: #000;">12m ago</span>
+                  </div>
+                  <div style="font-size: 15px; font-weight: 500; color: #444; margin-bottom: 4px;">8-K: Notice of
+                    Delisting or Failure...</div>
+                </div>
+                <!-- Item 3 -->
+                <div
+                  style="padding: 20px; background: #fff; border: 1px solid #f0f0f0; border-radius: 12px; opacity: 0.6;">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                    <span
+                      style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #000; letter-spacing: 0.05em;">PubMed</span>
+                    <span style="font-size: 12px; color: #000;">45m ago</span>
+                  </div>
+                  <div style="font-size: 15px; font-weight: 500; color: #444; margin-bottom: 4px;">New mechanism of
+                    resistance ident...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 2: Connect/Answers (Image Left - REVERSED) -->
+          <div class="benefits-row active"
+            style="display: flex; flex-direction: row-reverse; align-items: center; gap: 100px; margin-bottom: 80px;">
+            <div class="benefits-text" style="flex: 1;">
+
+              <h3 class="text-2xl font-semibold text-black mb-6"
+                style="font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.01em;">Connect Science to Strategy
+              </h3>
+              <p class="text-lg text-black leading-relaxed">
+                Stop piecing together data. Agents connect firms, drugs, trials, and commercial strategy, so you can
+                focus on
+                decisions that matter.
+              </p>
+            </div>
+            <div class="benefits-visual"
+              style="flex: 1; height: 420px; background: white; border-radius: 24px; box-shadow: 0 32px 64px -12px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.04); overflow: hidden; display: flex; flex-direction: column;">
+              <!-- Chat Window -->
+              <div style="flex: 1; padding: 32px; overflow: hidden; position: relative;">
+                <!-- User Message -->
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 32px;">
+                  <div
+                    style="background: #F3F0FF; color: #1a1a1a; padding: 14px 20px; border-radius: 18px 18px 4px 18px; font-size: 15px; font-weight: 400; max-width: 85%; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                    What class of drugs have the highest adverse event rate?
+                  </div>
+                </div>
+                <!-- Agent Response -->
+                <div style="display: flex; gap: 16px;">
+                  <div
+                    style="width: 36px; height: 36px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                    <svg width="36" height="36" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M 5 1
+                                 C 8 0.5, 14 1.5, 20 1
+                                 C 24 0.5, 26 1, 27 2
+                                 C 27.5 4, 27 10, 27.5 16
+                                 C 28 22, 27 25, 26 27
+                                 C 24 27.5, 18 27, 12 27.5
+                                 C 6 28, 2 27, 1 26
+                                 C 0.5 24, 1 18, 0.5 12
+                                 C 0 6, 1 2, 2 1
+                                 C 3 0.5, 4 1, 5 1 Z" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <g transform="translate(3, 4) scale(0.045)">
+                        <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58"
+                          stroke-linecap="round" fill="none" />
+                        <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58"
+                          stroke-linecap="round" fill="none" />
+                        <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58"
+                          stroke-linecap="round" fill="none" />
+                        <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58"
+                          stroke-linecap="round" fill="none" />
+                      </g>
+                    </svg>
+                  </div>
+                  <div style="flex: 1;">
+                    <!-- Citations -->
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+                      <div
+                        style="display: flex; align-items: center; gap: 4px; background: rgba(123,97,255,0.08); padding: 4px 10px; border-radius: 6px;">
+                        <span style="font-size: 11px; font-weight: 600; color: #7B61FF;">NCT088291...</span>
+                      </div>
+                      <div
+                        style="display: flex; align-items: center; gap: 4px; background: rgba(123,97,255,0.08); padding: 4px 10px; border-radius: 6px;">
+                        <span style="font-size: 11px; font-weight: 600; color: #7B61FF;">FDA.gov</span>
+                      </div>
+                    </div>
+                    <!-- Text -->
+                    <div style="color: #333; font-size: 15px; line-height: 1.6;">
+                      Based on cross-trial comparisons, <span
+                        style="background: rgba(123,97,255,0.1); color: #7B61FF; font-weight: 500; padding: 0 2px;">ADC
+                        therapies</span> currently show the highest Grade 3+ adverse event rates (45-60%), primarily
+                      driven by ocular toxicity and neutropenia.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Input Area -->
+              <div style="padding: 20px 32px; border-top: 1px solid #f9f9f9;">
+                <div
+                  style="height: 52px; background: #FAFAFA; border: 1px solid #eee; border-radius: 14px; display: flex; align-items: center; padding: 0 16px; justify-content: space-between;">
+                  <span style="color: #000; font-size: 14px;">Ask a follow up question...</span>
+                  <div
+                    style="width: 28px; height: 28px; background: #eee; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2">
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 3: Deliverables (Text Left - NORMAL) -->
+          <div class="benefits-row" style="display: flex; align-items: center; gap: 100px;">
+            <div class="benefits-text" style="flex: 1;">
+
+              <h3 class="text-2xl font-semibold text-black mb-6"
+                style="font-family: 'Cabinet Grotesk', sans-serif; letter-spacing: -0.01em;">Create Deliverables
+                in Minutes</h3>
+              <p class="text-lg text-black leading-relaxed">
+                The last mile is the hardest. Agents turn raw insights into stakeholder-ready decks in your templates,
+                so you can skip the formatting and own the narrative.
+              </p>
+            </div>
+            <div class="benefits-visual"
+              style="flex: 1; height: 420px; background: white; border-radius: 24px; box-shadow: 0 32px 64px -12px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.04); overflow: hidden; position: relative;">
+              <div
+                style="width: 100%; height: 100%; display: flex; flex-direction: column; padding: 32px; background: #fff;">
+                <!-- Header -->
+                <div style="margin-bottom: 24px;">
+                  <h4
+                    style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; font-weight: 600; color: #111; line-height: 1.2; margin-bottom: 8px;">
+                    Phase 3 data confirms <span
+                      style="background: rgba(123,97,255,0.1); color: #7B61FF; padding: 0 4px; border-radius: 4px;">superior
+                      efficacy</span> vs SoC
+                  </h4>
+                  <div
+                    style="font-size: 11px; color: #666; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">
+                    Cross-Trial Analysis • ESMO 2025 Readout • Competitor Benchmarking
+                  </div>
+                </div>
+
+                <!-- Body -->
+                <div style="flex: 1; display: flex; gap: 24px;">
+                  <!-- Left: Forest Plot / Efficacy -->
+                  <div style="flex: 3; display: flex; flex-direction: column; gap: 16px;">
+                    <!-- Kaplan-Meier Visualization -->
+                    <div
+                      style="flex: 1; background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 16px; display: flex; flex-direction: column;">
+                      <div
+                        style="font-size: 10px; font-weight: 700; color: #444; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between;">
+                        <span>Progression-Free Survival</span>
+                        <span style="color: #7B61FF;">HR 0.65</span>
+                      </div>
+                      <div style="flex: 1; position: relative; min-height: 0;">
+                        <!-- Visualization Area -->
+                        <svg width="100%" height="100%" viewBox="0 0 280 120" preserveAspectRatio="none"
+                          style="overflow: visible;">
+                          <!-- Grid lines -->
+                          <line x1="0" y1="120" x2="280" y2="120" stroke="#eee" stroke-width="1" />
+                          <line x1="0" y1="80" x2="280" y2="80" stroke="#f5f5f5" stroke-width="1"
+                            stroke-dasharray="4 2" />
+                          <line x1="0" y1="40" x2="280" y2="40" stroke="#f5f5f5" stroke-width="1"
+                            stroke-dasharray="4 2" />
+                          <line x1="0" y1="0" x2="280" y2="0" stroke="#f5f5f5" stroke-width="1"
+                            stroke-dasharray="4 2" />
+
+                          <!-- SoC Curve (Gray) - Stepped -->
+                          <polyline
+                            points="0,0 20,0 20,10 40,10 40,25 60,25 60,40 100,40 100,60 140,60 140,80 180,80 180,95 220,95 220,110 280,110"
+                            fill="none" stroke="#ccc" stroke-width="2" />
+
+                          <!-- Treatment Curve (Purple) - Stepped, Higher -->
+                          <polyline
+                            points="0,0 30,0 30,5 60,5 60,15 100,15 100,25 150,25 150,35 200,35 200,45 240,45 240,55 280,55"
+                            fill="none" stroke="#7B61FF" stroke-width="2" />
+
+                          <!-- Area fill for Treatment -->
+                          <path
+                            d="M0,0 30,0 30,5 60,5 60,15 100,15 100,25 150,25 150,35 200,35 200,45 240,45 240,55 280,55 280,120 0,120 Z"
+                            fill="url(#grad1)" opacity="0.1" />
+                          <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                              <stop offset="0%" style="stop-color:#7B61FF;stop-opacity:1" />
+                              <stop offset="100%" style="stop-color:#7B61FF;stop-opacity:0" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                        <!-- Labels overlay -->
+                        <div
+                          style="position: absolute; bottom: 8px; left: 8px; font-size: 9px; color: #7B61FF; font-weight: 600;">
+                          F-202</div>
+                        <div
+                          style="position: absolute; bottom: 8px; right: 8px; font-size: 9px; color: #999; font-weight: 500;">
+                          SoC</div>
+                        <div
+                          style="position: absolute; top: 30%; right: 10%; background: #fff; padding: 2px 6px; border: 1px solid #eee; border-radius: 4px; font-size: 9px; color: #111; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                          p < 0.001</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right: Qualitative (Text) -->
+                    <div style="flex: 2; display: flex; flex-direction: column; gap: 20px; padding-top: 4px;">
+                      <div>
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                          <div style="width: 6px; height: 6px; background: #7B61FF; border-radius: 50%;"></div>
+                          <div style="font-size: 11px; font-weight: 700; color: #111;">EFFICACY SIGNAL</div>
+                        </div>
+                        <p style="font-size: 12px; line-height: 1.5; color: #555;">
+                          Achieved stat sig PFS benefit (HR 0.65) vs SoC, outperforming expectations. Best-in-class
+                          potential
+                          confirmed.
+                        </p>
+                      </div>
+                      <div>
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                          <div style="width: 6px; height: 6px; background: #FF5D5D; border-radius: 50%;"></div>
+                          <div style="font-size: 11px; font-weight: 700; color: #111;">SAFETY PROFILE</div>
+                        </div>
+                        <p style="font-size: 12px; line-height: 1.5; color: #555;">
+                          Grade 3+ AE rates comparable to placebo. No new safety signals observed, differentiating from
+                          Competitor Y.
+                        </p>
+                      </div>
+                      <!-- Mini Agent Note -->
+                      <div
+                        style="margin-top: auto; padding: 10px; background: rgba(123,97,255,0.05); border-radius: 6px; border: 1px solid rgba(123,97,255,0.1);">
+                        <div
+                          style="font-size: 10px; font-weight: 600; color: #7B61FF; display: flex; align-items: center; gap: 4px;">
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                          </svg>
+                          AGENT INSIGHT
+                        </div>
+                        <div style="font-size: 10px; color: #444; margin-top: 4px; line-height: 1.4;">
+                          p-value < 0.001 across all key subgroups including high-risk patients. </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div
+                      style="padding-top: 16px; margin-top: 16px; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+                      <div style="font-size: 9px; color: #999;">CONFIDENTIAL • CLINICAL DEVELOPMENT</div>
+                      <div style="font-size: 9px; color: #ccc;">SLIDE 42</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </section>
+
+      <!-- Comparison Section -->
+      <section class="comparison-section" aria-labelledby="comparison-heading"
+        style="padding: 40px 0; display: flex; flex-direction: column; align-items: center; background-color: #F7F5FF;">
+        <!-- Section Title -->
+        <h2 id="comparison-heading" class="leading-tight" style="text-align: center; margin-bottom: 60px;">
+          <span
+            style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 32px; display: block; letter-spacing: -0.01em; color: #000;">A
+            <span style="color: #7B61FF; font-style: italic;">New Class</span> of Market Intelligence</span>
+        </h2>
+
+        <!-- Comparison Table -->
+        <div class="comparison-container"
+          style="width: 100%; max-width: 800px; background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); overflow: hidden; border: 1px solid #e5e7eb;"
+          role="region" aria-label="Comparison table">
+          <table class="comparison-table" role="table" aria-label="Comparison of Ferma Agents versus incumbents"
+            style="width: 100%; border-collapse: collapse; font-family: 'Plus Jakarta Sans', sans-serif; table-layout: fixed;">
+            <colgroup>
+              <col style="width: 150px;">
+              <col style="width: 210px;">
+              <col style="width: 330px;">
+            </colgroup>
+            <thead>
+              <tr style="background-color: #f9fafb; border-bottom: 1px solid #e5e7eb;">
+                <th scope="col"
+                  style="padding: 12px 16px; text-align: left; font-weight: 600; font-size: 13px; color: #000; border-right: 1px solid #e5e7eb;">
+                  Feature
+                </th>
+                <th scope="col"
+                  style="padding: 12px 16px; text-align: left; font-weight: 600; font-size: 15px; color: #111827; border-right: 1px solid #e5e7eb;">
+                  Cortellis / Evaluate Pharma
+                </th>
+                <th scope="col"
+                  style="padding: 12px 16px; text-align: left; font-weight: 600; font-size: 15px; color: #7B61FF; background-color: rgba(123,97,255,0.03);">
+                  Ferma Agents
+                </th>
+              </tr>
+            </thead>
+            <tbody style="background-color: white;">
+              <!-- Row 1 -->
+              <tr style="border-bottom: 1px solid #e5e7eb;">
+                <th scope="row"
+                  style="padding: 16px; font-weight: 600; font-size: 14px; color: #111827; vertical-align: middle; text-align: left; border-right: 1px solid #e5e7eb; background-color: #f9fafb;">
+                  Data Freshness
+                </th>
+                <td data-label="Cortellis"
+                  style="padding: 16px; font-size: 14px; color: #111827; font-weight: 500; vertical-align: middle; border-right: 1px solid #e5e7eb;">
+                  Static snapshots
+                </td>
+                <td data-label="Ferma Agents"
+                  style="padding: 16px; font-size: 14px; color: #7B61FF; font-weight: 600; vertical-align: middle; background-color: rgba(123,97,255,0.03);">
+                  Living intelligence 24/7 monitoring
+                </td>
+              </tr>
+              <!-- Row 2 -->
+              <tr style="border-bottom: 1px solid #e5e7eb;">
+                <th scope="row"
+                  style="padding: 16px; font-weight: 600; font-size: 14px; color: #111827; vertical-align: middle; text-align: left; border-right: 1px solid #e5e7eb; background-color: #f9fafb;">
+                  Conference Intel
+                </th>
+                <td data-label="Cortellis"
+                  style="padding: 16px; font-size: 14px; color: #111827; font-weight: 500; vertical-align: middle; border-right: 1px solid #e5e7eb;">
+                  Abstracts only
+                </td>
+                <td data-label="Ferma Agents"
+                  style="padding: 16px; font-size: 14px; color: #7B61FF; font-weight: 600; vertical-align: middle; background-color: rgba(123,97,255,0.03);">
+                  Full posters, slides, and sessions
+                </td>
+              </tr>
+              <!-- Row 3 -->
+              <tr style="border-bottom: 1px solid #e5e7eb;">
+                <th scope="row"
+                  style="padding: 16px; font-weight: 600; font-size: 14px; color: #111827; vertical-align: middle; text-align: left; border-right: 1px solid #e5e7eb; background-color: #f9fafb;">
+                  China Coverage
+                </th>
+                <td data-label="Cortellis"
+                  style="padding: 16px; font-size: 14px; color: #111827; font-weight: 500; vertical-align: middle; border-right: 1px solid #e5e7eb;">
+                  Western-centric blindspots
+                </td>
+                <td data-label="Ferma Agents"
+                  style="padding: 16px; font-size: 14px; color: #7B61FF; font-weight: 600; vertical-align: middle; background-color: rgba(123,97,255,0.03);">
+                  On-the-ground team monitoring local sources
+                </td>
+              </tr>
+              <!-- Row 4 -->
+              <tr style="border-bottom: 1px solid #e5e7eb;">
+                <th scope="row"
+                  style="padding: 16px; font-weight: 600; font-size: 14px; color: #111827; vertical-align: middle; text-align: left; border-right: 1px solid #e5e7eb; background-color: #f9fafb;">
+                  Deliverables
+                </th>
+                <td data-label="Cortellis"
+                  style="padding: 16px; font-size: 14px; color: #111827; font-weight: 500; vertical-align: middle; border-right: 1px solid #e5e7eb;">
+                  Raw CSVs you format
+                </td>
+                <td data-label="Ferma Agents"
+                  style="padding: 16px; font-size: 14px; color: #7B61FF; font-weight: 600; vertical-align: middle; background-color: rgba(123,97,255,0.03);">
+                  Finished decks in your templates
+                </td>
+              </tr>
+              <!-- Row 5 -->
+              <tr style="border-bottom: 1px solid #e5e7eb;">
+                <th scope="row"
+                  style="padding: 16px; font-weight: 600; font-size: 14px; color: #111827; vertical-align: middle; text-align: left; border-right: 1px solid #e5e7eb; background-color: #f9fafb;">
+                  Methodology
+                </th>
+                <td data-label="Cortellis"
+                  style="padding: 16px; font-size: 14px; color: #111827; font-weight: 500; vertical-align: middle; border-right: 1px solid #e5e7eb;">
+                  Rigid filters you adapt to
+                </td>
+                <td data-label="Ferma Agents"
+                  style="padding: 16px; font-size: 14px; color: #7B61FF; font-weight: 600; vertical-align: middle; background-color: rgba(123,97,255,0.03);">
+                  Your playbooks encoded
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" aria-labelledby="cta-heading"
+        style="padding: 80px 0; display: flex; flex-direction: column; align-items: center; text-align: center; background-color: #F7F5FF;">
+        <h2 id="cta-heading" class="leading-tight" style="text-align: center; margin-bottom: 60px;">
+          <span
+            style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 32px; display: block; letter-spacing: -0.01em; color: #000;">Try
+            Ferma Agents Now</span>
+        </h2>
+        <a href="https://cal.com/ferma/ferma-agents-demo" target="_blank" aria-label="Request a demo of Ferma Agents"
+          class="px-6 py-3 text-sm font-medium text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 flex items-center justify-center"
+          style="background-color: #7B61FF; text-decoration: none;">
+          Book a Demo
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo" style="background-color: #000; padding: 0;">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="footer-content"
+          style="display: flex; align-items: center; justify-content: center; height: 56px; gap: 100px;">
+          <!-- Logo - same width as hero text -->
+          <div class="footer-logo" style="flex: 0 0 400px; display: flex; align-items: center; gap: 8px;">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path
+                d="M 5 1 C 8 0.5, 14 1.5, 20 1 C 24 0.5, 26 1, 27 2 C 27.5 4, 27 10, 27.5 16 C 28 22, 27 25, 26 27 C 24 27.5, 18 27, 12 27.5 C 6 28, 2 27, 1 26 C 0.5 24, 1 18, 0.5 12 C 0 6, 1 2, 2 1 C 3 0.5, 4 1, 5 1 Z"
+                fill="#7B61FF" />
+              <g transform="translate(3, 4) scale(0.045)">
+                <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+                <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+                <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+                <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                  fill="none" />
+              </g>
+            </svg>
+            <span style="font-size: 14px; font-weight: 600; color: #fff;">Ferma Agents</span>
+          </div>
+
+          <!-- Links - same width as hero image -->
+          <div class="footer-links"
+            style="flex: 0 0 600px; display: flex; justify-content: flex-end; align-items: center; gap: 16px;">
+            <a href="mailto:info@ferma.ai" class="footer-link" style="font-size: 14px; color: #9CA3AF; text-decoration: none; transition: color 0.2s;">info@ferma.ai</a>
+            <span style="color: #4B5563; font-size: 14px;">•</span>
+            <a href="https://agents.ferma.ai/#/terms-and-conditions" target="_blank" rel="noopener noreferrer" class="footer-link"
+              style="font-size: 14px; color: #9CA3AF; text-decoration: none; transition: color 0.2s;">Terms</a>
+            <span style="color: #4B5563; font-size: 14px;">•</span>
+            <a href="https://agents.ferma.ai/#/privacy-policy" target="_blank" rel="noopener noreferrer" class="footer-link"
+              style="font-size: 14px; color: #9CA3AF; text-decoration: none; transition: color 0.2s;">Privacy</a>
+
+            <!-- SOC2 Badge -->
+            <div
+              style="display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 999px; margin-left: 12px; border: 1px solid rgba(255,255,255,0.1);">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <span style="font-size: 11px; color: #fff; font-weight: 600;">SOC2 Type II</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html></

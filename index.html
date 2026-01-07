@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferma Agents | Market Intelligence That Works for You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366F1',
+            'primary-dark': '#4F46E5',
+            'primary-light': '#818CF8',
+            dark: '#0F172A',
+            'dark-light': '#1E293B',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      background: #FAFBFC;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Gradient backgrounds */
+    .hero-gradient {
+      background: linear-gradient(135deg, #FAFBFC 0%, #F1F5F9 50%, #EEF2FF 100%);
+    }
+
+    .accent-gradient {
+      background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Glass effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse-soft {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    @keyframes slide-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes flowRight {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(960px); }
+    }
+
+    @keyframes pulseDots {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes pulseDiamond {
+      0%, 100% {
+        transform-origin: 430px 320px;
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px rgba(99, 102, 241, 0));
+      }
+      50% {
+        transform-origin: 430px 320px;
+        transform: scale(1.03);
+        filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.3));
+      }
+    }
+
+    .data-flow-1 { animation: flowRight 28s linear infinite; animation-delay: -3s; }
+    .data-flow-2 { animation: flowRight 28s linear infinite; animation-delay: -9s; }
+    .data-flow-3 { animation: flowRight 28s linear infinite; animation-delay: -15s; }
+    .data-flow-4 { animation: flowRight 28s linear infinite; animation-delay: -21s; }
+
+    .window-dot-1 { animation: pulseDots 2s ease-in-out infinite; }
+    .window-dot-2 { animation: pulseDots 2s ease-in-out infinite; animation-delay: 0.3s; }
+    .window-dot-3 { animation: pulseDots 2s ease-in-out infinite; animation-delay: 0.6s; }
+
+    .diamond-pulse { animation: pulseDiamond 2s ease-in-out infinite; }
+
+    .dot-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      fill: #000000;
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-pulse-soft {
+      animation: pulse-soft 3s ease-in-out infinite;
+    }
+
+    .animate-slide-up {
+      animation: slide-up 0.6s ease-out forwards;
+    }
+
+    /* Cards */
+    .card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 6px 16px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #1E293B;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 15px;
+      border: 1px solid #E2E8F0;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: #6366F1;
+      color: #6366F1;
+    }
+
+    /* Table styles */
+    .comparison-table {
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    /* Footer links */
+    .footer-link {
+      color: #94A3B8;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: #FFFFFF;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 48px;
+      }
+      .hero-text {
+        max-width: 100% !important;
+      }
+      .hero-svg-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .hero-svg {
+        max-width: 500px !important;
+      }
+      .benefits-row {
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      .benefits-row.reverse {
+        flex-direction: column !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 36px !important;
+      }
+      .hero-svg {
+        max-width: 100% !important;
+      }
+      .section-title {
+        font-size: 32px !important;
+      }
+      .benefits-visual {
+        height: 320px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 28px !important;
+      }
+      .section-title {
+        font-size: 26px !important;
+      }
+      .container-padding {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+    }
+
+    /* Cookie Banner */
+    #cookie-consent-banner {
+      animation: slide-up 0.4s ease-out;
+    }
+
+    /* Toggle Switch Styles */
+    .cookie-toggle input:checked + .cookie-slider {
+      background-color: #6366F1 !important;
+    }
+    .cookie-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .cookie-toggle input:checked + .cookie-slider:before {
+      transform: translateX(20px);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-100/50">
+    <nav class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2.5 group">
+          <svg width="32" height="32" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 5 1 C 8 0.5, 14 1.5, 20 1 C 24 0.5, 26 1, 27 2 C 27.5 4, 27 10, 27.5 16 C 28 22, 27 25, 26 27 C 24 27.5, 18 27, 12 27.5 C 6 28, 2 27, 1 26 C 0.5 24, 1 18, 0.5 12 C 0 6, 1 2, 2 1 C 3 0.5, 4 1, 5 1 Z" fill="#6366F1" stroke="#6366F1" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <g transform="translate(3, 4) scale(0.045)">
+              <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+              <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+              <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+              <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+          <span class="text-lg font-semibold text-dark">Ferma Agents</span>
+        </a>
+
+        <!-- CTA Buttons -->
+        <div class="flex items-center gap-3">
+          <a href="https://agents.ferma.ai" target="_blank" rel="noopener noreferrer"
+             class="px-5 py-2.5 text-sm font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg hover:border-primary hover:text-primary transition-all">
+            Log In
+          </a>
+          <a href="https://cal.com/ferma/ferma-agents-demo" target="_blank"
+             class="px-5 py-2.5 text-sm font-semibold text-white rounded-lg transition-all"
+             style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%); box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);">
+            Book Demo
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 lg:pt-40 lg:pb-32">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="hero-content flex flex-col lg:flex-row items-center justify-between gap-16">
+          <!-- Text -->
+          <div class="hero-text flex-1 max-w-xl">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-100 shadow-sm mb-6">
+              <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse-soft"></span>
+              <span class="text-sm font-medium text-slate-600">AI-Powered Market Intelligence</span>
+            </div>
+
+            <h1 class="hero-title text-5xl lg:text-6xl font-extrabold text-dark leading-tight mb-6">
+              Never Miss a<br>
+              <span class="text-gradient" id="dynamic-headline">Critical Shift</span>
+            </h1>
+
+            <p class="text-lg text-slate-600 leading-relaxed mb-8 max-w-lg">
+              Ferma Agents track market intelligence 24/7, run your workflows, and create stakeholder-ready deliverables automatically.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="https://cal.com/ferma/ferma-agents-demo" target="_blank" class="btn-primary text-center">
+                Book a Demo
+              </a>
+              <a href="#features" class="btn-secondary text-center">
+                See How It Works
+              </a>
+            </div>
+
+            <!-- Trust indicators -->
+            <div class="flex items-center gap-6 mt-10 pt-8 border-t border-gray-200/60">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+                <span class="text-sm font-medium text-slate-600">SOC2 Type II</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                <span class="text-sm font-medium text-slate-600">Enterprise Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual - Animated SVG -->
+          <div class="hero-svg-container flex-1" aria-hidden="true">
+            <svg class="hero-svg w-full max-w-xl" viewBox="0 0 860 615" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- 13 Hand-drawn style horizontal lines -->
+              <g stroke="#CBD5E1" stroke-width="1" opacity="0.5" stroke-dasharray="4 3" fill="none" stroke-linecap="round">
+                <path d="M 0 50 C 80 48, 160 52, 240 50 C 320 48, 400 52, 480 50 C 560 48, 640 52, 720 50 C 800 48, 840 51, 860 50"/>
+                <path d="M 0 95 C 70 97, 150 93, 230 95 C 310 97, 390 93, 470 95 C 550 97, 630 93, 710 95 C 790 97, 830 94, 860 95"/>
+                <path d="M 0 140 C 85 138, 170 142, 255 140 C 340 138, 425 142, 510 140 C 595 138, 680 142, 765 140 C 820 138, 845 141, 860 140"/>
+                <path d="M 0 185 C 75 187, 155 183, 235 185 C 315 187, 395 183, 475 185 C 555 187, 635 183, 715 185 C 795 187, 835 184, 860 185"/>
+                <path d="M 0 230 C 90 228, 175 232, 260 230 C 345 228, 430 232, 515 230 C 600 228, 685 232, 770 230 C 825 228, 850 231, 860 230"/>
+                <path d="M 0 275 C 65 277, 145 273, 225 275 C 305 277, 385 273, 465 275 C 545 277, 625 273, 705 275 C 785 277, 830 274, 860 275"/>
+                <path d="M 0 320 C 95 318, 180 322, 270 320 C 360 318, 450 322, 540 320 C 630 318, 720 322, 790 320 C 835 318, 852 321, 860 320"/>
+                <path d="M 0 365 C 70 367, 160 363, 250 365 C 340 367, 430 363, 520 365 C 610 367, 700 363, 780 365 C 830 367, 848 364, 860 365"/>
+                <path d="M 0 410 C 85 408, 165 412, 245 410 C 325 408, 405 412, 485 410 C 565 408, 645 412, 725 410 C 805 408, 840 411, 860 410"/>
+                <path d="M 0 455 C 75 457, 155 453, 235 455 C 315 457, 395 453, 475 455 C 555 457, 635 453, 715 455 C 795 457, 838 454, 860 455"/>
+                <path d="M 0 500 C 90 498, 170 502, 250 500 C 330 498, 410 502, 490 500 C 570 498, 650 502, 730 500 C 810 498, 842 501, 860 500"/>
+                <path d="M 0 545 C 80 547, 160 543, 240 545 C 320 547, 400 543, 480 545 C 560 547, 640 543, 720 545 C 800 547, 836 544, 860 545"/>
+                <path d="M 0 590 C 85 588, 175 592, 265 590 C 355 588, 445 592, 535 590 C 625 588, 715 592, 785 590 C 830 588, 850 591, 860 590"/>
+              </g>
+
+              <!-- Flowing dots -->
+              <g class="data-flow-1">
+                <circle cx="-50" cy="95" r="2.5" fill="#6366F1" opacity="0.5"/>
+                <circle cx="-500" cy="95" r="2.5" fill="#3D3D3D" opacity="0.4"/>
+              </g>
+              <g class="data-flow-2">
+                <circle cx="-150" cy="275" r="2.5" fill="#3D3D3D" opacity="0.4"/>
+                <circle cx="-600" cy="275" r="2.5" fill="#6366F1" opacity="0.5"/>
+              </g>
+              <g class="data-flow-3">
+                <circle cx="-100" cy="410" r="2.5" fill="#6366F1" opacity="0.45"/>
+                <circle cx="-550" cy="410" r="2.5" fill="#3D3D3D" opacity="0.4"/>
+              </g>
+              <g class="data-flow-4">
+                <circle cx="-200" cy="545" r="2.5" fill="#3D3D3D" opacity="0.4"/>
+                <circle cx="-650" cy="545" r="2.5" fill="#6366F1" opacity="0.45"/>
+              </g>
+
+              <!-- ASYMMETRIC SPARSE DOTS with labels -->
+              <!-- Line 1 (y=50) -->
+              <circle cx="45" cy="50" r="6" fill="#6366F1"/>
+              <g><rect x="55" y="39" width="95" height="18" fill="#FAFBFC"/><text class="dot-label" x="58" y="53">Clinical Trials</text></g>
+              <circle cx="320" cy="50" r="5" fill="#3D3D3D"/>
+              <g><rect x="330" y="39" width="115" height="18" fill="#FAFBFC"/><text class="dot-label" x="333" y="53">Investor Reports</text></g>
+              <circle cx="580" cy="50" r="5" fill="none" stroke="#94A3B8" stroke-width="2"/>
+
+              <!-- Line 2 (y=95) -->
+              <circle cx="250" cy="95" r="5" fill="none" stroke="#94A3B8" stroke-width="2"/>
+              <circle cx="720" cy="95" r="6" fill="#6366F1"/>
+              <g><rect x="590" y="84" width="100" height="18" fill="#FAFBFC"/><text class="dot-label" x="593" y="98">Earnings Calls</text></g>
+
+              <!-- Line 3 (y=140) -->
+              <circle cx="60" cy="140" r="5" fill="#3D3D3D"/>
+              <circle cx="780" cy="140" r="5" fill="none" stroke="#94A3B8" stroke-width="2"/>
+
+              <!-- Line 4 (y=185) -->
+              <circle cx="45" cy="185" r="5" fill="none" stroke="#94A3B8" stroke-width="2"/>
+              <g><rect x="55" y="174" width="85" height="18" fill="#FAFBFC"/><text class="dot-label" x="58" y="188">SEC Filings</text></g>
+
+              <!-- Line 5 (y=230) -->
+              <circle cx="820" cy="230" r="6" fill="#6366F1"/>
+
+              <!-- Line 6 (y=275) -->
+              <circle cx="55" cy="275" r="5" fill="#3D3D3D"/>
+
+              <!-- Line 7 (y=320) -->
+              <circle cx="820" cy="320" r="5" fill="#3D3D3D"/>
+              <g><rect x="680" y="309" width="125" height="18" fill="#FAFBFC"/><text class="dot-label" x="683" y="323">Regulatory Bodies</text></g>
+
+              <!-- Line 8 (y=365) -->
+              <circle cx="40" cy="365" r="6" fill="#6366F1"/>
+
+              <!-- Line 9 (y=410) -->
+              <circle cx="820" cy="410" r="5" fill="none" stroke="#94A3B8" stroke-width="2"/>
+
+              <!-- Line 10 (y=455) -->
+              <circle cx="50" cy="455" r="5" fill="#3D3D3D"/>
+              <g><rect x="60" y="444" width="105" height="18" fill="#FAFBFC"/><text class="dot-label" x="63" y="458">Pipeline Pages</text></g>
+
+              <!-- Line 11 (y=500) -->
+              <circle cx="785" cy="500" r="6" fill="#6366F1"/>
+
+              <!-- Line 12 (y=545) -->
+              <circle cx="55" cy="545" r="5" fill="none" stroke="#94A3B8" stroke-width="2"/>
+              <circle cx="280" cy="545" r="6" fill="#6366F1"/>
+              <g><rect x="292" y="534" width="110" height="18" fill="#FAFBFC"/><text class="dot-label" x="295" y="548">Corporate Decks</text></g>
+              <circle cx="620" cy="545" r="5" fill="#3D3D3D"/>
+
+              <!-- Line 13 (y=590) -->
+              <circle cx="140" cy="590" r="5" fill="#3D3D3D"/>
+              <g><rect x="150" y="579" width="115" height="18" fill="#FAFBFC"/><text class="dot-label" x="153" y="593">Chinese BioTechs</text></g>
+              <circle cx="500" cy="590" r="6" fill="#6366F1"/>
+              <g><rect x="510" y="579" width="105" height="18" fill="#FAFBFC"/><text class="dot-label" x="513" y="593">Press Releases</text></g>
+              <circle cx="830" cy="590" r="5" fill="none" stroke="#94A3B8" stroke-width="2"/>
+              <g><rect x="700" y="579" width="100" height="18" fill="#FAFBFC"/><text class="dot-label" x="703" y="593">Patent Filings</text></g>
+
+              <!-- CENTER SQUARE WITH LOGO -->
+              <g class="diamond-pulse">
+                <path d="M 410 300 C 414 299.5, 424 300.5, 432 300 C 442 299.5, 449 300, 452 302 C 453 305, 452 314, 453 324 C 454 334, 452 342, 450 344 C 447 345, 439 344, 430 345 C 421 346, 413 344, 410 343 C 408 341, 409 332, 408 320 C 407 308, 409 302, 410 300 C 411 299, 410 300, 410 300 Z" fill="#6366F1" stroke="#6366F1" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <g transform="translate(414, 307) scale(0.07)">
+                  <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                  <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                  <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                  <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+                </g>
+              </g>
+
+              <!-- BOX 1 - CI Workflows -->
+              <g transform="translate(172, 130)">
+                <rect x="0" y="0" width="230" height="160" rx="8" fill="#FFFFFF"/>
+                <rect x="0" y="0" width="230" height="160" rx="8" fill="none" stroke="#E2E8F0" stroke-width="1.5"/>
+                <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#6366F1"/>
+                <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D"/>
+                <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+                <text font-family="'JetBrains Mono', monospace" font-size="20" font-weight="600" fill="#6366F1"><tspan x="18" y="50">CI Workflows</tspan></text>
+                <text font-family="'JetBrains Mono', monospace" font-size="15" fill="#334155">
+                  <tspan x="18" y="80">Market Landscape</tspan>
+                  <tspan x="18" y="102">Competitive Strategy</tspan>
+                  <tspan x="18" y="124">Catalyst Monitoring</tspan>
+                </text>
+              </g>
+
+              <!-- BOX 2 - BD Workflows -->
+              <g transform="translate(458, 130)">
+                <rect x="0" y="0" width="230" height="160" rx="8" fill="#FFFFFF"/>
+                <rect x="0" y="0" width="230" height="160" rx="8" fill="none" stroke="#E2E8F0" stroke-width="1.5"/>
+                <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#6366F1"/>
+                <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D"/>
+                <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+                <text font-family="'JetBrains Mono', monospace" font-size="20" font-weight="600" fill="#6366F1"><tspan x="18" y="50">BD Workflows</tspan></text>
+                <text font-family="'JetBrains Mono', monospace" font-size="15" fill="#334155">
+                  <tspan x="18" y="80">Deal Evaluation</tspan>
+                  <tspan x="18" y="102">Endpoint Analysis</tspan>
+                  <tspan x="18" y="124">Trial Forecasting</tspan>
+                </text>
+              </g>
+
+              <!-- BOX 3 - Medical Workflows -->
+              <g transform="translate(172, 350)">
+                <rect x="0" y="0" width="230" height="160" rx="8" fill="#FFFFFF"/>
+                <rect x="0" y="0" width="230" height="160" rx="8" fill="none" stroke="#E2E8F0" stroke-width="1.5"/>
+                <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#6366F1"/>
+                <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D"/>
+                <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+                <text font-family="'JetBrains Mono', monospace" font-size="20" font-weight="600" fill="#6366F1"><tspan x="18" y="50">Medical Workflows</tspan></text>
+                <text font-family="'JetBrains Mono', monospace" font-size="15" fill="#334155">
+                  <tspan x="18" y="80">Evidence Gap ID</tspan>
+                  <tspan x="18" y="102">SoC Benchmarking</tspan>
+                  <tspan x="18" y="124">Target Product Profile</tspan>
+                </text>
+              </g>
+
+              <!-- BOX 4 - Custom Workflows -->
+              <g transform="translate(458, 350)">
+                <rect x="0" y="0" width="230" height="160" rx="8" fill="#FFFFFF"/>
+                <rect x="0" y="0" width="230" height="160" rx="8" fill="none" stroke="#E2E8F0" stroke-width="1.5"/>
+                <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#6366F1"/>
+                <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D"/>
+                <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+                <text font-family="'JetBrains Mono', monospace" font-size="20" font-weight="600" fill="#6366F1"><tspan x="18" y="50">Custom Workflows</tspan></text>
+                <text font-family="'JetBrains Mono', monospace" font-size="15" fill="#334155">
+                  <tspan x="18" y="80">Build your own</tspan>
+                  <tspan x="18" y="102">workflows tailored to</tspan>
+                  <tspan x="18" y="124">your needs...</tspan>
+                </text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Preview -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="card overflow-hidden">
+          <iframe
+            src="https://vm1689.github.io/fa-v11/"
+            width="100%"
+            height="600"
+            style="border: none; display: block;"
+            title="Ferma Agents Product Preview"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 lg:py-28 bg-gradient-to-b from-white to-gray-50/50">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="section-title text-4xl lg:text-5xl font-extrabold text-dark mb-4">
+            You Own the <span class="text-gradient">So What</span>
+          </h2>
+          <p class="text-lg text-slate-600">
+            While agents handle the grunt work, you focus on strategic decisions that matter.
+          </p>
+        </div>
+
+        <!-- Feature 1 -->
+        <div class="benefits-row flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-20">
+          <div class="flex-1">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-primary text-xs font-semibold mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+              MONITORING
+            </div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-dark mb-4">Catch Early Signals</h3>
+            <p class="text-lg text-slate-600 leading-relaxed">
+              The best intel isn't in the news. Agents monitor hard-to-reach sources 24/7, scanning 100+ conferences and on-ground Chinese intel so you spot signals others miss.
+            </p>
+          </div>
+          <div class="flex-1 w-full">
+            <div class="benefits-visual card h-96 p-6 overflow-hidden">
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-sm font-semibold text-dark">Signal Monitor</span>
+                <span class="flex items-center gap-1.5 text-xs font-medium text-green-600 bg-green-50 px-2.5 py-1 rounded-full">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                  Live
+                </span>
+              </div>
+              <div class="space-y-3">
+                <div class="p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl border-l-4 border-primary">
+                  <div class="flex justify-between mb-2">
+                    <span class="text-xs font-bold text-primary uppercase tracking-wide">ClinicalTrials.gov</span>
+                    <span class="text-xs text-slate-500">Just now</span>
+                  </div>
+                  <div class="text-sm font-semibold text-dark mb-1">Phase 3 Primary Endpoint Changed</div>
+                  <div class="text-xs text-slate-500">Oncology - Drug-X - Competitor Y</div>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-xl">
+                  <div class="flex justify-between mb-2">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">SEC Filings</span>
+                    <span class="text-xs text-slate-500">12m ago</span>
+                  </div>
+                  <div class="text-sm font-medium text-slate-600">8-K: Notice of Delisting or Failure...</div>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-xl opacity-60">
+                  <div class="flex justify-between mb-2">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">PubMed</span>
+                    <span class="text-xs text-slate-500">45m ago</span>
+                  </div>
+                  <div class="text-sm font-medium text-slate-600">New mechanism of resistance ident...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="benefits-row reverse flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 mb-20">
+          <div class="flex-1">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-primary text-xs font-semibold mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+              INTELLIGENCE
+            </div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-dark mb-4">Connect Science to Strategy</h3>
+            <p class="text-lg text-slate-600 leading-relaxed">
+              Stop piecing together data. Agents connect firms, drugs, trials, and commercial strategy, so you can focus on decisions that matter.
+            </p>
+          </div>
+          <div class="flex-1 w-full">
+            <div class="benefits-visual card h-96 p-6 overflow-hidden flex flex-col">
+              <div class="flex-1">
+                <!-- User Message -->
+                <div class="flex justify-end mb-6">
+                  <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-3 rounded-2xl rounded-br-md text-sm max-w-xs shadow-lg shadow-indigo-500/20">
+                    What class of drugs have the highest adverse event rate?
+                  </div>
+                </div>
+                <!-- Agent Response -->
+                <div class="flex gap-3">
+                  <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center flex-shrink-0">
+                    <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="flex gap-2 mb-3 flex-wrap">
+                      <span class="text-xs font-semibold text-primary bg-indigo-50 px-2 py-1 rounded">NCT088291...</span>
+                      <span class="text-xs font-semibold text-primary bg-indigo-50 px-2 py-1 rounded">FDA.gov</span>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                      Based on cross-trial comparisons, <span class="text-primary font-semibold bg-indigo-50 px-1 rounded">ADC therapies</span> currently show the highest Grade 3+ adverse event rates (45-60%), primarily driven by ocular toxicity and neutropenia.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Input -->
+              <div class="pt-4 border-t border-gray-100">
+                <div class="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
+                  <span class="text-sm text-slate-400 flex-1">Ask a follow up question...</span>
+                  <div class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="benefits-row flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <div class="flex-1">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-primary text-xs font-semibold mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              DELIVERABLES
+            </div>
+            <h3 class="text-2xl lg:text-3xl font-bold text-dark mb-4">Create Deliverables in Minutes</h3>
+            <p class="text-lg text-slate-600 leading-relaxed">
+              The last mile is the hardest. Agents turn raw insights into stakeholder-ready decks in your templates, so you can skip the formatting and own the narrative.
+            </p>
+          </div>
+          <div class="flex-1 w-full">
+            <div class="benefits-visual card h-96 p-6 overflow-hidden">
+              <div class="h-full flex flex-col">
+                <!-- Header -->
+                <div class="mb-4">
+                  <h4 class="text-lg font-bold text-dark mb-1">
+                    Phase 3 data confirms <span class="text-primary">superior efficacy</span> vs SoC
+                  </h4>
+                  <div class="text-xs text-slate-400 uppercase tracking-wide font-medium">
+                    Cross-Trial Analysis - ESMO 2025 Readout
+                  </div>
+                </div>
+                <!-- Content -->
+                <div class="flex-1 flex gap-4">
+                  <!-- Chart -->
+                  <div class="flex-1 bg-gray-50 rounded-xl p-4">
+                    <div class="flex justify-between items-center mb-3">
+                      <span class="text-xs font-bold text-slate-500 uppercase">PFS Survival</span>
+                      <span class="text-xs font-bold text-primary">HR 0.65</span>
+                    </div>
+                    <svg class="w-full h-24" viewBox="0 0 200 80">
+                      <line x1="0" y1="80" x2="200" y2="80" stroke="#E2E8F0" stroke-width="1"/>
+                      <line x1="0" y1="40" x2="200" y2="40" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4"/>
+                      <polyline points="0,0 20,5 50,15 100,25 150,40 200,60" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+                      <polyline points="0,0 30,3 70,8 120,12 170,18 200,25" fill="none" stroke="#6366F1" stroke-width="2"/>
+                      <path d="M0,0 30,3 70,8 120,12 170,18 200,25 200,80 0,80 Z" fill="url(#chartGrad)" opacity="0.2"/>
+                      <defs>
+                        <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stop-color="#6366F1"/>
+                          <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <div class="flex justify-between mt-2">
+                      <span class="text-xs text-primary font-semibold">F-202</span>
+                      <span class="text-xs text-slate-400">SoC</span>
+                    </div>
+                  </div>
+                  <!-- Insights -->
+                  <div class="w-40 space-y-3">
+                    <div>
+                      <div class="flex items-center gap-1.5 mb-1">
+                        <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                        <span class="text-[10px] font-bold text-dark uppercase">Efficacy</span>
+                      </div>
+                      <p class="text-[11px] text-slate-500 leading-relaxed">Stat sig PFS benefit (HR 0.65) vs SoC</p>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-1.5 mb-1">
+                        <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                        <span class="text-[10px] font-bold text-dark uppercase">Safety</span>
+                      </div>
+                      <p class="text-[11px] text-slate-500 leading-relaxed">Grade 3+ AE rates comparable to placebo</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Footer -->
+                <div class="flex justify-between items-center pt-4 border-t border-gray-100 mt-4">
+                  <span class="text-[10px] text-slate-400 uppercase tracking-wide">Confidential - Clinical Development</span>
+                  <span class="text-[10px] text-slate-300">Slide 42</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="section-title text-3xl lg:text-4xl font-extrabold text-dark mb-4">
+            A <span class="text-gradient">New Class</span> of Market Intelligence
+          </h2>
+          <p class="text-slate-600">See how Ferma Agents compare to traditional solutions</p>
+        </div>
+
+        <div class="card overflow-hidden">
+          <table class="comparison-table w-full">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-500">Feature</th>
+                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-500">Traditional Tools</th>
+                <th class="px-6 py-4 text-left text-sm font-semibold text-primary bg-indigo-50/50">Ferma Agents</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-dark">Data Freshness</td>
+                <td class="px-6 py-4 text-sm text-slate-600">Static snapshots</td>
+                <td class="px-6 py-4 text-sm font-semibold text-primary bg-indigo-50/30">Living intelligence 24/7</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-dark">Conference Intel</td>
+                <td class="px-6 py-4 text-sm text-slate-600">Abstracts only</td>
+                <td class="px-6 py-4 text-sm font-semibold text-primary bg-indigo-50/30">Full posters, slides & sessions</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-dark">China Coverage</td>
+                <td class="px-6 py-4 text-sm text-slate-600">Western-centric blindspots</td>
+                <td class="px-6 py-4 text-sm font-semibold text-primary bg-indigo-50/30">On-ground team monitoring</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-dark">Deliverables</td>
+                <td class="px-6 py-4 text-sm text-slate-600">Raw CSVs you format</td>
+                <td class="px-6 py-4 text-sm font-semibold text-primary bg-indigo-50/30">Finished decks in your templates</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm font-medium text-dark">Methodology</td>
+                <td class="px-6 py-4 text-sm text-slate-600">Rigid filters you adapt to</td>
+                <td class="px-6 py-4 text-sm font-semibold text-primary bg-indigo-50/30">Your playbooks encoded</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 lg:py-28 hero-gradient">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-extrabold text-dark mb-6">
+          Ready to Transform Your Market Intelligence?
+        </h2>
+        <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto">
+          Join leading pharma and biotech companies using Ferma Agents to stay ahead of the market.
+        </p>
+        <a href="https://cal.com/ferma/ferma-agents-demo" target="_blank" class="btn-primary inline-flex items-center gap-2">
+          Book a Demo
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark py-12">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-2.5">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 5 1 C 8 0.5, 14 1.5, 20 1 C 24 0.5, 26 1, 27 2 C 27.5 4, 27 10, 27.5 16 C 28 22, 27 25, 26 27 C 24 27.5, 18 27, 12 27.5 C 6 28, 2 27, 1 26 C 0.5 24, 1 18, 0.5 12 C 0 6, 1 2, 2 1 C 3 0.5, 4 1, 5 1 Z" fill="#6366F1" stroke="#6366F1" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <g transform="translate(3, 4) scale(0.045)">
+              <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+              <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+              <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+              <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+          <span class="text-white font-semibold">Ferma Agents</span>
+        </div>
+
+        <!-- Links -->
+        <div class="flex items-center gap-6 flex-wrap justify-center">
+          <a href="mailto:info@ferma.ai" class="footer-link text-sm">info@ferma.ai</a>
+          <a href="https://agents.ferma.ai/#/terms-and-conditions" target="_blank" class="footer-link text-sm">Terms</a>
+          <a href="https://agents.ferma.ai/#/privacy-policy" target="_blank" class="footer-link text-sm">Privacy</a>
+          <div class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
+            <svg class="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+            <span class="text-white text-xs font-semibold">SOC2 Type II</span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-white/10 text-center">
+        <p class="text-slate-500 text-sm">&copy; 2025 Ferma. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 p-6 lg:p-8" style="display: none;">
+    <button onclick="closeCookieBanner()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">&times;</button>
+    <div class="max-w-5xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+      <div class="flex-1 min-w-0">
+        <h3 class="font-bold text-dark text-base mb-2">Privacy Center Notification</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          We and our partners use cookies and other tracking technologies to operate our website and improve your experience. We may store and/or access information on a device and process personal data for personalized content, advertising measurement, and audience research. Your consent will be stored for this website.
+        </p>
+      </div>
+      <div class="flex items-center gap-3 flex-shrink-0 flex-wrap">
+        <button onclick="openCustomizeModal()" class="px-5 py-2.5 text-sm font-semibold text-primary bg-white border border-primary rounded-lg hover:bg-indigo-50 transition-all">Customise</button>
+        <button onclick="rejectAllCookies()" class="px-5 py-2.5 text-sm font-semibold text-white rounded-lg transition-all" style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);">Reject All</button>
+        <button onclick="acceptAllCookies()" class="px-5 py-2.5 text-sm font-semibold text-white rounded-lg transition-all" style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Customization Modal -->
+  <div id="cookie-customize-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" style="display: none;">
+    <div class="bg-white rounded-xl max-w-xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl">
+      <!-- Modal Header -->
+      <div class="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+        <h2 class="font-bold text-dark text-lg">Customise Consent Preferences</h2>
+        <button onclick="closeCustomizeModal()" class="text-slate-400 hover:text-slate-600 text-2xl leading-none">&times;</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="px-6 py-5 overflow-y-auto flex-1">
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+          We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.
+        </p>
+        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+          The cookies categorised as "Necessary" are stored on your browser as they are essential for enabling the basic functionalities of the site.
+        </p>
+
+        <!-- Necessary Cookies -->
+        <div class="border border-gray-200 rounded-lg mb-3">
+          <div onclick="toggleAccordion('necessary')" class="px-4 py-3.5 flex items-center justify-between cursor-pointer bg-gray-50 rounded-t-lg">
+            <div class="flex items-center gap-2">
+              <span id="necessary-arrow" class="text-slate-400 text-xs transition-transform">&#9654;</span>
+              <span class="font-semibold text-dark text-sm">Necessary</span>
+            </div>
+            <span class="text-xs font-medium text-green-600">Always Active</span>
+          </div>
+          <div id="necessary-content" class="px-4 py-3 border-t border-gray-100 text-sm text-slate-600 leading-relaxed" style="display: none;">
+            Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.
+          </div>
+        </div>
+
+        <!-- Functional Cookies -->
+        <div class="border border-gray-200 rounded-lg mb-3">
+          <div onclick="toggleAccordion('functional')" class="px-4 py-3.5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-2">
+              <span id="functional-arrow" class="text-slate-400 text-xs transition-transform">&#9654;</span>
+              <span class="font-semibold text-dark text-sm">Functional</span>
+            </div>
+            <label class="cookie-toggle relative inline-block w-11 h-6" onclick="event.stopPropagation();">
+              <input type="checkbox" id="functional-toggle" class="opacity-0 w-0 h-0">
+              <span class="cookie-slider absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition-all"></span>
+            </label>
+          </div>
+          <div id="functional-content" class="px-4 py-3 border-t border-gray-100 text-sm text-slate-600 leading-relaxed" style="display: none;">
+            Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.
+          </div>
+        </div>
+
+        <!-- Analytics Cookies -->
+        <div class="border border-gray-200 rounded-lg mb-3">
+          <div onclick="toggleAccordion('analytics')" class="px-4 py-3.5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-2">
+              <span id="analytics-arrow" class="text-slate-400 text-xs transition-transform">&#9654;</span>
+              <span class="font-semibold text-dark text-sm">Analytics</span>
+            </div>
+            <label class="cookie-toggle relative inline-block w-11 h-6" onclick="event.stopPropagation();">
+              <input type="checkbox" id="analytics-toggle" class="opacity-0 w-0 h-0">
+              <span class="cookie-slider absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition-all"></span>
+            </label>
+          </div>
+          <div id="analytics-content" class="px-4 py-3 border-t border-gray-100 text-sm text-slate-600 leading-relaxed" style="display: none;">
+            Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.
+          </div>
+        </div>
+
+        <!-- Performance Cookies -->
+        <div class="border border-gray-200 rounded-lg mb-3">
+          <div onclick="toggleAccordion('performance')" class="px-4 py-3.5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-2">
+              <span id="performance-arrow" class="text-slate-400 text-xs transition-transform">&#9654;</span>
+              <span class="font-semibold text-dark text-sm">Performance</span>
+            </div>
+            <label class="cookie-toggle relative inline-block w-11 h-6" onclick="event.stopPropagation();">
+              <input type="checkbox" id="performance-toggle" class="opacity-0 w-0 h-0">
+              <span class="cookie-slider absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition-all"></span>
+            </label>
+          </div>
+          <div id="performance-content" class="px-4 py-3 border-t border-gray-100 text-sm text-slate-600 leading-relaxed" style="display: none;">
+            Performance cookies are used to understand and analyse the key performance indexes of the website which helps in delivering a better user experience for the visitors.
+          </div>
+        </div>
+
+        <!-- Advertisement Cookies -->
+        <div class="border border-gray-200 rounded-lg">
+          <div onclick="toggleAccordion('advertisement')" class="px-4 py-3.5 flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-2">
+              <span id="advertisement-arrow" class="text-slate-400 text-xs transition-transform">&#9654;</span>
+              <span class="font-semibold text-dark text-sm">Advertisement</span>
+            </div>
+            <label class="cookie-toggle relative inline-block w-11 h-6" onclick="event.stopPropagation();">
+              <input type="checkbox" id="advertisement-toggle" class="opacity-0 w-0 h-0">
+              <span class="cookie-slider absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition-all"></span>
+            </label>
+          </div>
+          <div id="advertisement-content" class="px-4 py-3 border-t border-gray-100 text-sm text-slate-600 leading-relaxed" style="display: none;">
+            Advertisement cookies are used to provide visitors with customised advertisements based on the pages you visited previously and to analyse the effectiveness of the ad campaigns.
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-4 border-t border-gray-100 bg-gray-50 flex items-center justify-center gap-3 flex-wrap">
+        <button onclick="rejectAllFromModal()" class="px-5 py-2.5 text-sm font-semibold text-white rounded-lg flex-1 max-w-[160px] transition-all" style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);">Reject All</button>
+        <button onclick="savePreferences()" class="px-5 py-2.5 text-sm font-semibold text-white rounded-lg flex-1 max-w-[160px] transition-all" style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);">Save Preferences</button>
+        <button onclick="acceptAllFromModal()" class="px-5 py-2.5 text-sm font-semibold text-white rounded-lg flex-1 max-w-[160px] transition-all" style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Scroll restoration
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // Cookie Consent Functions
+    function setCookie(name, value, days) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+      document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/;SameSite=Lax';
+    }
+
+    function getCookie(name) {
+      const nameEQ = name + '=';
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    function showCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) banner.style.display = 'block';
+    }
+
+    function hideCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) banner.style.display = 'none';
+    }
+
+    function closeCookieBanner() {
+      hideCookieBanner();
+    }
+
+    function acceptAllCookies() {
+      setCookie('cookie_consent', 'accepted', 365);
+      setCookie('cookie_preferences', JSON.stringify({functional: true, analytics: true, performance: true, advertisement: true}), 365);
+      hideCookieBanner();
+      closeCustomizeModal();
+    }
+
+    function rejectAllCookies() {
+      setCookie('cookie_consent', 'rejected', 365);
+      setCookie('cookie_preferences', JSON.stringify({functional: false, analytics: false, performance: false, advertisement: false}), 365);
+      hideCookieBanner();
+      closeCustomizeModal();
+    }
+
+    // Modal Functions
+    function openCustomizeModal() {
+      const modal = document.getElementById('cookie-customize-modal');
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeCustomizeModal() {
+      const modal = document.getElementById('cookie-customize-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function acceptAllFromModal() {
+      document.getElementById('functional-toggle').checked = true;
+      document.getElementById('analytics-toggle').checked = true;
+      document.getElementById('performance-toggle').checked = true;
+      document.getElementById('advertisement-toggle').checked = true;
+      updateToggleStyles();
+      acceptAllCookies();
+    }
+
+    function rejectAllFromModal() {
+      document.getElementById('functional-toggle').checked = false;
+      document.getElementById('analytics-toggle').checked = false;
+      document.getElementById('performance-toggle').checked = false;
+      document.getElementById('advertisement-toggle').checked = false;
+      updateToggleStyles();
+      rejectAllCookies();
+    }
+
+    function savePreferences() {
+      const preferences = {
+        functional: document.getElementById('functional-toggle').checked,
+        analytics: document.getElementById('analytics-toggle').checked,
+        performance: document.getElementById('performance-toggle').checked,
+        advertisement: document.getElementById('advertisement-toggle').checked
+      };
+      setCookie('cookie_consent', 'custom', 365);
+      setCookie('cookie_preferences', JSON.stringify(preferences), 365);
+      hideCookieBanner();
+      closeCustomizeModal();
+    }
+
+    function updateToggleStyles() {
+      const toggles = ['functional', 'analytics', 'performance', 'advertisement'];
+      toggles.forEach(id => {
+        const input = document.getElementById(id + '-toggle');
+        const slider = input.nextElementSibling;
+        if (input.checked) {
+          slider.style.backgroundColor = '#6366F1';
+        } else {
+          slider.style.backgroundColor = '#d1d5db';
+        }
+      });
+    }
+
+    // Accordion Functions
+    function toggleAccordion(section) {
+      const content = document.getElementById(section + '-content');
+      const arrow = document.getElementById(section + '-arrow');
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        arrow.style.transform = 'rotate(90deg)';
+      } else {
+        content.style.display = 'none';
+        arrow.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    // Dynamic headline animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const headlines = [
+        "Critical Shift",
+        "Partnership Window",
+        "Pivotal Readout",
+        "Pipeline Movement",
+        "Regulatory Surprise",
+      ];
+      let currentIndex = 0;
+      const headlineElement = document.getElementById('dynamic-headline');
+
+      if (headlineElement) {
+        setInterval(() => {
+          headlineElement.style.opacity = '0';
+          headlineElement.style.transform = 'translateY(10px)';
+
+          setTimeout(() => {
+            currentIndex = (currentIndex + 1) % headlines.length;
+            headlineElement.textContent = headlines[currentIndex];
+            headlineElement.style.opacity = '1';
+            headlineElement.style.transform = 'translateY(0)';
+          }, 300);
+        }, 3000);
+
+        headlineElement.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      }
+
+      // Cookie banner - check consent
+      const consent = getCookie('cookie_consent');
+      if (!consent) {
+        showCookieBanner();
+      }
+
+      // Add click handlers to toggle sliders
+      const toggles = ['functional', 'analytics', 'performance', 'advertisement'];
+      toggles.forEach(id => {
+        const slider = document.querySelector('#' + id + '-toggle + .cookie-slider');
+        if (slider) {
+          slider.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const input = document.getElementById(id + '-toggle');
+            input.checked = !input.checked;
+            if (input.checked) {
+              this.style.backgroundColor = '#6366F1';
+            } else {
+              this.style.backgroundColor = '#d1d5db';
+            }
+          });
+        }
+      });
+
+      // Close modal when clicking outside
+      const modal = document.getElementById('cookie-customize-modal');
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            closeCustomizeModal();
+          }
+        });
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
