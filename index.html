@@ -3,7 +3,8 @@
 
 <head>
   <!-- Start cookieyes banner -->
-  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/77482e05b3b4edbd1b80b1a7/script.js"></script>
+  <script id="cookieyes" type="text/javascript"
+    src="https://cdn-cookieyes.com/client_data/77482e05b3b4edbd1b80b1a7/script.js"></script>
   <!-- End cookieyes banner -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -173,8 +174,8 @@
     /* TABLET - 768px to 1024px */
     @media (max-width: 1024px) {
       .hero-container {
-        gap: 32px !important;
-        padding: 32px 24px !important;
+        gap: 24px !important;
+        padding: 20px 24px 0 !important;
       }
 
       .hero-text {
@@ -182,9 +183,21 @@
         max-width: none !important;
       }
 
+      .hero-text p {
+        margin-bottom: 12px !important;
+      }
+
+      .hero-text h1 {
+        margin-bottom: 20px !important;
+      }
+
       .hero-svg {
         width: 420px !important;
         height: auto !important;
+      }
+
+      #product-preview {
+        padding: 48px 24px !important;
       }
 
       .benefits-section {
@@ -213,8 +226,8 @@
       }
 
       .product-preview {
-        width: calc(100% - 48px) !important;
-        max-width: 100% !important;
+        width: 100% !important;
+        max-width: 1100px !important;
       }
 
       .cta-section {
@@ -246,9 +259,9 @@
       /* === HERO SECTION === */
       .hero-container {
         flex-direction: column !important;
-        gap: 32px !important;
-        padding: 24px 20px 32px !important;
-        text-align: center;
+        gap: 24px !important;
+        padding: 16px 20px 0 !important;
+        text-align: center !important;
         align-items: center !important;
       }
 
@@ -261,36 +274,38 @@
       }
 
       .hero-text h1 {
-        font-size: 38px !important;
+        font-size: 20px !important;
         margin-bottom: 16px !important;
-        line-height: 1.1 !important;
+        line-height: 1.3 !important;
       }
 
       .hero-text h1 span:first-child {
-        font-size: 22px !important;
+        font-size: 14px !important;
         margin-bottom: 4px !important;
       }
 
       .hero-text h1 #dynamic-headline {
-        font-size: 38px !important;
+        font-size: 20px !important;
         display: block !important;
         white-space: nowrap !important;
       }
 
       .hero-text p {
-        margin-bottom: 24px !important;
-        font-size: 16px !important;
+        margin-bottom: 12px !important;
+        font-size: 11px !important;
         line-height: 1.6 !important;
         color: rgba(0, 0, 0, 0.7) !important;
       }
 
-      .hero-text .flex {
+      .cta-row {
         justify-content: center !important;
+        gap: 16px !important;
+        width: 100% !important;
       }
 
-      .hero-text .flex a {
-        padding: 14px 28px !important;
-        font-size: 15px !important;
+      .cta-row a {
+        padding: 10px 24px !important;
+        font-size: 13px !important;
       }
 
       .hero-svg-container {
@@ -308,14 +323,14 @@
 
       /* === PRODUCT PREVIEW === */
       #product-preview {
-        padding: 48px 20px !important;
+        padding: 40px 20px !important;
       }
 
       .product-preview {
-        width: 100% !important;
-        margin: 0 !important;
-        border-radius: 16px 16px 0 0 !important;
-        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05) !important;
+        width: calc(100% - 40px) !important;
+        margin: 0 auto !important;
+        border-radius: 16px !important;
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.2) !important;
       }
 
       .product-preview iframe,
@@ -603,24 +618,25 @@
       }
 
       .hero-container {
-        padding: 20px 16px 28px !important;
+        padding: 12px 16px 0 !important;
         gap: 24px !important;
       }
 
       .hero-text h1 {
-        font-size: 32px !important;
+        font-size: 18px !important;
       }
 
       .hero-text h1 span:first-child {
-        font-size: 16px !important;
+        font-size: 12px !important;
       }
 
       .hero-text h1 #dynamic-headline {
-        font-size: 32px !important;
+        font-size: 18px !important;
       }
 
       .hero-text p {
-        font-size: 15px !important;
+        font-size: 10px !important;
+        margin-bottom: 12px !important;
       }
 
       .hero-svg {
@@ -633,7 +649,7 @@
       }
 
       #product-preview {
-        padding: 40px 16px !important;
+        padding: 32px 16px !important;
       }
 
       .benefits-section {
@@ -1175,13 +1191,14 @@
       background-color: #7B61FF;
       color: white;
       border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 16px;
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 14px;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.2s;
       white-space: nowrap;
+      letter-spacing: 0.025em;
     }
 
     .email-capture-button:hover {
@@ -1193,9 +1210,23 @@
       transform: translateY(0);
     }
 
+    /* Tablet styles */
+    @media (max-width: 1024px) {
+      .email-capture-button {
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 6px;
+      }
+    }
+
+    /* Mobile styles */
     @media (max-width: 768px) {
       .email-capture-button {
         width: 100%;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        text-align: center;
       }
     }
 
@@ -1307,19 +1338,7 @@
 
     /* Mobile adjustments for new hero */
     @media (max-width: 768px) {
-      .hero-container {
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 24px 20px 32px !important;
-        gap: 32px !important;
-      }
-
-      .hero-text {
-        flex: unset !important;
-        max-width: 100% !important;
-        text-align: center;
-        width: 100%;
-      }
+      /* Consolidated into earlier block */
 
       .headline-prefix,
       .headline-main {
@@ -1341,11 +1360,7 @@
         font-size: 22px;
       }
 
-      .cta-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-      }
+      /* Consolidated into earlier block */
 
       .cta-button {
         width: 100%;
@@ -1439,10 +1454,11 @@
 
       /* Product Preview Mobile - Fixed Height Layout */
       .product-preview {
-        width: 100% !important;
+        width: calc(100% - 40px) !important;
+        margin: 0 auto !important;
         height: 550px !important;
         /* Fixed height as requested */
-        border-radius: 12px;
+        border-radius: 16px !important;
       }
 
       #ferma-app-root {
@@ -1563,10 +1579,10 @@
     to main content</a>
   <!-- Header -->
   <header role="banner"
-    style="background-color: rgba(247, 245, 255, 0.9); position: fixed; top: 0; padding-top: 16px; z-index: 1000; width: 100%; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.02);">
+    style="background-color: rgba(247, 245, 255, 0.9); position: fixed; top: 0; padding: 8px 0; z-index: 1000; width: 100%; backdrop-filter: blur(12px);">
     <nav role="navigation" aria-label="Main navigation" class="max-w-7xl mx-auto px-8">
       <div
-        style="display: flex; align-items: center; justify-content: space-between; height: 56px; max-width: 1200px; margin: 0 auto;">
+        style="display: flex; align-items: center; justify-content: space-between; height: 40px; max-width: 1100px; margin: 0 auto;">
         <!-- Left side: Logo + Nav -->
         <div style="display: flex; align-items: center; gap: 48px;">
           <!-- Logo -->
@@ -1574,26 +1590,16 @@
             style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true">
-              <!-- Hand-drawn square with F logo -->
-              <path d="M 5 1
-                         C 8 0.5, 14 1.5, 20 1
-                         C 24 0.5, 26 1, 27 2
-                         C 27.5 4, 27 10, 27.5 16
-                         C 28 22, 27 25, 26 27
-                         C 24 27.5, 18 27, 12 27.5
-                         C 6 28, 2 27, 1 26
-                         C 0.5 24, 1 18, 0.5 12
-                         C 0 6, 1 2, 2 1
-                         C 3 0.5, 4 1, 5 1 Z" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.5" stroke-linecap="round"
-                stroke-linejoin="round" />
+              <!-- Square with F logo -->
+              <rect x="2" y="2" width="24" height="24" rx="6" fill="none" />
               <g transform="translate(3, 4) scale(0.045)">
-                <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                <path d="M200 150 C165 125, 135 105, 110 90" stroke="#7B61FF" stroke-width="58" stroke-linecap="round"
                   fill="none" />
-                <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                <path d="M200 150 C198 200, 202 280, 200 340" stroke="#7B61FF" stroke-width="58" stroke-linecap="round"
                   fill="none" />
-                <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                <path d="M200 150 C250 148, 320 152, 380 150" stroke="#7B61FF" stroke-width="58" stroke-linecap="round"
                   fill="none" />
-                <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
+                <path d="M200 270 C230 268, 275 272, 310 270" stroke="#7B61FF" stroke-width="58" stroke-linecap="round"
                   fill="none" />
               </g>
             </svg>
@@ -1633,13 +1639,12 @@
     // Hero Title Animation
     document.addEventListener('DOMContentLoaded', () => {
       const headlines = [
-        "Critical Shift",
-        "Partnership Window",
-        "Pivotal Readout",
-        "Pipeline Movement",
-        "Narrative Change",
-        "Guideline Revision",
-        "Regulatory Surprise",
+        "market landscapes",
+        "competitive battlecards",
+        "readout assessments",
+        "target product profiles",
+        "evidence gap analyses",
+        "investment theses",
       ];
       let currentIndex = 0;
       const headlineElement = document.getElementById('dynamic-headline');
@@ -1661,363 +1666,42 @@
 
   </script>
 
-  <div class="min-h-screen" style="background-color: #F7F5FF; padding-top: 72px;">
-    <!-- Hero Section - Side by Side -->
+  <div class="min-h-screen" style="background-color: #F7F5FF; padding-top: 56px;">
+    <!-- Hero Section - Centered Text -->
     <main id="main-content" role="main" class="max-w-7xl mx-auto px-8" style="background-color: #F7F5FF;">
       <div class="hero-container"
-        style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding-top: 40px; padding-bottom: 30px; width: 100%; max-width: 1200px; margin: 0 auto;">
+        style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding-top: 24px; padding-bottom: 0; width: 100%; max-width: 1100px; margin: 0 auto; text-align: left;">
 
-        <!-- LEFT - Hero Text -->
-        <div class="hero-text" style="flex: 0 0 580px; max-width: 580px;">
+        <!-- Hero Text -->
+        <div class="hero-text" style="width: 100%; max-width: 100%;">
 
-          <div class="credibility-bar">
-            <span>A Product of <a href="https://www.zoomrx.com" target="_blank"
-                style="text-decoration: none; color: inherit;"><strong>ZoomRx</strong></a></span>
-          </div>
-
-          <h1>
-            <div class="headline-prefix">Build Stronger Conviction with Pharma Agents</div>
-          </h1>
-
-          <p class="subhead"
-            style="font-size: 16px; line-height: 1.6; color: #000000; font-family: 'Plus Jakarta Sans', sans-serif;">
-            Ferma Agents surface early signals across clinical readouts, pipeline moves, and management's tone shifts,
-            then connect them to strategic implications. So you form stronger conviction.
+          <p
+            style="margin-bottom: 12px; font-size: 12px; font-weight: 300; color: #000; opacity: 0.5; letter-spacing: -0.01em;">
+            From <a href="https://www.zoomrx.com/" target="_blank" rel="noopener noreferrer"
+              style="text-decoration: none; color: inherit;">ZoomRx</a>, trusted by 19 of the top 20 pharma firms
           </p>
 
-          <div class="stats-bar">
-            <div class="stat">
-              <div class="stat-number">100+</div>
-              <div class="stat-label" style="font-size: 13px; color: #000000; font-weight: 400;">Conferences</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number">40K+</div>
-              <div class="stat-label" style="font-size: 13px; color: #000000; font-weight: 400;">Pipeline Moves</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number">1K+</div>
-              <div class="stat-label" style="font-size: 13px; color: #000000; font-weight: 400;">Active Deals</div>
-            </div>
-          </div>
+          <h1
+            style="font-size: 24px; font-weight: 500; color: #000; line-height: 1.4; margin-bottom: 24px; font-family: 'Plus Jakarta Sans', sans-serif;">
+            Built to sharpen your conviction, <br />
+            Ferma Agents is the best way to create
+            <span id="dynamic-headline" class="transition-all duration-300 transform inline-block"
+              style="color: #7B61FF">market landscapes</span>
+          </h1>
 
-          <div class="cta-row">
+          <div class="cta-row" style="justify-content: flex-start; margin-top: 0;">
             <a href="https://cal.com/ferma/ferma-agents-demo" target="_blank" rel="noopener noreferrer"
               class="email-capture-button" style="text-decoration: none; display: inline-block;">
               Book a Demo
             </a>
-            <a href="#product-preview" class="secondary-link"
-              onclick="if(window.startProductPreviewFromExec) window.startProductPreviewFromExec()">See it in Action
-              →</a>
           </div>
         </div>
 
-        <!-- RIGHT - Hero Image -->
-        <div class="hero-svg-container" style="display: flex;" aria-hidden="true">
-          <svg class="hero-svg" width="580" height="417" viewBox="0 0 860 615" fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-label="Visualization of Ferma Agents workflow system showing data flows and workflow boxes">
-            <!-- 13 Hand-drawn style horizontal lines -->
-            <g stroke="#CCCCCC" stroke-width="1" opacity="0.5" stroke-dasharray="4 3" fill="none"
-              stroke-linecap="round">
-              <path
-                d="M 0 50 C 80 48, 160 52, 240 50 C 320 48, 400 52, 480 50 C 560 48, 640 52, 720 50 C 800 48, 840 51, 860 50" />
-              <path
-                d="M 0 95 C 70 97, 150 93, 230 95 C 310 97, 390 93, 470 95 C 550 97, 630 93, 710 95 C 790 97, 830 94, 860 95" />
-              <path
-                d="M 0 140 C 85 138, 170 142, 255 140 C 340 138, 425 142, 510 140 C 595 138, 680 142, 765 140 C 820 138, 845 141, 860 140" />
-              <path
-                d="M 0 185 C 75 187, 155 183, 235 185 C 315 187, 395 183, 475 185 C 555 187, 635 183, 715 185 C 795 187, 835 184, 860 185" />
-              <path
-                d="M 0 230 C 90 228, 175 232, 260 230 C 345 228, 430 232, 515 230 C 600 228, 685 232, 770 230 C 825 228, 850 231, 860 230" />
-              <path
-                d="M 0 275 C 65 277, 145 273, 225 275 C 305 277, 385 273, 465 275 C 545 277, 625 273, 705 275 C 785 277, 830 274, 860 275" />
-              <path
-                d="M 0 320 C 95 318, 180 322, 270 320 C 360 318, 450 322, 540 320 C 630 318, 720 322, 790 320 C 835 318, 852 321, 860 320" />
-              <path
-                d="M 0 365 C 70 367, 160 363, 250 365 C 340 367, 430 363, 520 365 C 610 367, 700 363, 780 365 C 830 367, 848 364, 860 365" />
-              <path
-                d="M 0 410 C 85 408, 165 412, 245 410 C 325 408, 405 412, 485 410 C 565 408, 645 412, 725 410 C 805 408, 840 411, 860 410" />
-              <path
-                d="M 0 455 C 75 457, 155 453, 235 455 C 315 457, 395 453, 475 455 C 555 457, 635 453, 715 455 C 795 457, 838 454, 860 455" />
-              <path
-                d="M 0 500 C 90 498, 170 502, 250 500 C 330 498, 410 502, 490 500 C 570 498, 650 502, 730 500 C 810 498, 842 501, 860 500" />
-              <path
-                d="M 0 545 C 80 547, 160 543, 240 545 C 320 547, 400 543, 480 545 C 560 547, 640 543, 720 545 C 800 547, 836 544, 860 545" />
-              <path
-                d="M 0 590 C 85 588, 175 592, 265 590 C 355 588, 445 592, 535 590 C 625 588, 715 592, 785 590 C 830 588, 850 591, 860 590" />
-            </g>
-
-            <!-- Flowing dots -->
-            <g class="data-flow-1">
-              <circle cx="-50" cy="95" r="2.5" fill="#7B61FF" opacity="0.5" />
-              <circle cx="-500" cy="95" r="2.5" fill="#3D3D3D" opacity="0.4" />
-            </g>
-            <g class="data-flow-2">
-              <circle cx="-150" cy="275" r="2.5" fill="#3D3D3D" opacity="0.4" />
-              <circle cx="-600" cy="275" r="2.5" fill="#7B61FF" opacity="0.5" />
-            </g>
-            <g class="data-flow-3">
-              <circle cx="-100" cy="410" r="2.5" fill="#7B61FF" opacity="0.45" />
-              <circle cx="-550" cy="410" r="2.5" fill="#3D3D3D" opacity="0.4" />
-            </g>
-            <g class="data-flow-4">
-              <circle cx="-200" cy="545" r="2.5" fill="#3D3D3D" opacity="0.4" />
-              <circle cx="-650" cy="545" r="2.5" fill="#7B61FF" opacity="0.45" />
-            </g>
-
-            <!-- ASYMMETRIC SPARSE DOTS with labels -->
-
-            <!-- Line 1 (y=50) -->
-            <circle cx="45" cy="50" r="6" fill="#7B61FF" />
-            <g>
-
-              <text class="dot-label" x="58" y="53">Press Releases</text>
-            </g>
-            <circle cx="320" cy="50" r="5" fill="#3D3D3D" />
-            <g>
-
-              <text class="dot-label" x="333" y="53">Chinese Intel</text>
-            </g>
-            <circle cx="580" cy="50" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
-
-            <!-- Line 2 (y=95) -->
-            <circle cx="250" cy="95" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
-            <circle cx="720" cy="95" r="6" fill="#7B61FF" />
-            <g>
-
-              <text class="dot-label" x="553" y="98">Cash Runway Alert</text>
-            </g>
-
-            <!-- Line 3 (y=140) -->
-            <circle cx="60" cy="140" r="5" fill="#3D3D3D" />
-            <circle cx="780" cy="140" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
-
-            <!-- Line 4 (y=185) -->
-            <circle cx="45" cy="185" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
-            <g>
-
-              <text class="dot-label" x="58" y="188">Label Expansion</text>
-            </g>
-
-            <!-- Line 5 (y=230) -->
-            <circle cx="820" cy="230" r="6" fill="#7B61FF" />
-
-            <!-- Line 6 (y=275) -->
-            <circle cx="55" cy="275" r="5" fill="#3D3D3D" />
-
-            <!-- Line 7 (y=320) -->
-            <circle cx="820" cy="320" r="5" fill="#3D3D3D" />
-            <g>
-
-              <text class="dot-label" x="663" y="323">Competitor Launch</text>
-            </g>
-
-            <!-- Line 8 (y=365) -->
-            <circle cx="40" cy="365" r="6" fill="#7B61FF" />
-
-            <!-- Line 9 (y=410) -->
-            <circle cx="820" cy="410" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
-
-            <!-- Line 10 (y=455) -->
-            <circle cx="50" cy="455" r="5" fill="#3D3D3D" />
-            <g>
-
-              <text class="dot-label" x="63" y="458">Pipeline Pages</text>
-            </g>
-
-            <!-- Line 11 (y=500) -->
-            <circle cx="785" cy="500" r="6" fill="#7B61FF" />
-
-            <!-- Line 12 (y=545) -->
-            <circle cx="55" cy="545" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
-            <circle cx="280" cy="545" r="6" fill="#7B61FF" />
-            <g>
-
-              <text class="dot-label" x="295" y="548">New Safety Signal</text>
-            </g>
-            <circle cx="620" cy="545" r="5" fill="#3D3D3D" />
-            <g>
-
-              <text class="dot-label" x="633" y="548">Earnings Call</text>
-            </g>
-
-            <!-- Line 13 (y=590) -->
-            <circle cx="140" cy="590" r="5" fill="#3D3D3D" />
-            <g>
-
-              <text class="dot-label" x="153" y="593">Conference Readouts</text>
-            </g>
-            <circle cx="500" cy="590" r="6" fill="#7B61FF" />
-            <g>
-
-              <text class="dot-label" x="513" y="593">Corporate Deck</text>
-            </g>
-            <circle cx="830" cy="590" r="5" fill="none" stroke="#AAAAAA" stroke-width="2" />
-
-
-            <!-- CENTER SQUARE WITH LOGO -->
-            <g class="diamond-pulse" style="transform-origin: 0 0;">
-              <path d="M 410 300
-                       C 414 299.5, 424 300.5, 432 300
-                       C 442 299.5, 449 300, 452 302
-                       C 453 305, 452 314, 453 324
-                       C 454 334, 452 342, 450 344
-                       C 447 345, 439 344, 430 345
-                       C 421 346, 413 344, 410 343
-                       C 408 341, 409 332, 408 320
-                       C 407 308, 409 302, 410 300
-                       C 411 299, 410 300, 410 300 Z" fill="#7B61FF" stroke="#7B61FF" stroke-width="0.5"
-                stroke-linecap="round" stroke-linejoin="round" />
-              <g transform="translate(414, 307) scale(0.07)">
-                <path d="M200 150 C165 125, 135 105, 110 90" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
-                  fill="none" />
-                <path d="M200 150 C198 200, 202 280, 200 340" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
-                  fill="none" />
-                <path d="M200 150 C250 148, 320 152, 380 150" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
-                  fill="none" />
-                <path d="M200 270 C230 268, 275 272, 310 270" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round"
-                  fill="none" />
-              </g>
-            </g>
-
-            <!-- BOX 1 - CI Workflows -->
-            <g transform="translate(172, 130)">
-              <rect x="0" y="0" width="230" height="160" rx="6" fill="#FFFFFF" />
-              <path d="M 8 2
-                       C 50 0, 90 3, 115 1
-                       C 150 -1, 180 2, 222 1
-                       C 227 1, 229 3, 229 8
-                       C 231 45, 228 85, 230 115
-                       C 232 140, 229 152, 228 155
-                       C 227 159, 224 160, 218 159
-                       C 170 161, 120 158, 70 160
-                       C 40 161, 15 159, 8 158
-                       C 3 158, 1 155, 1 150
-                       C -1 110, 2 70, 0 40
-                       C -1 20, 1 8, 2 5
-                       C 3 2, 5 1, 8 2 Z" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"
-                stroke-linejoin="round" />
-
-              <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#7B61FF" />
-              <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D" />
-              <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#AAAAAA" stroke-width="1.5" />
-
-              <text font-family="'JetBrains Mono', monospace" font-size="22" font-weight="500" fill="#7B61FF">
-                <tspan x="18" y="50">CI Workflows</tspan>
-              </text>
-
-              <text font-family="'JetBrains Mono', monospace" font-size="18" fill="#000000">
-                <tspan x="18" y="80">Market Landscape</tspan>
-                <tspan x="18" y="102">Competitive Strategy</tspan>
-                <tspan x="18" y="124">Catalyst Monitoring</tspan>
-              </text>
-            </g>
-
-            <!-- BOX 2 - BD Workflows -->
-            <g transform="translate(458, 130)">
-              <rect x="0" y="0" width="230" height="160" rx="6" fill="#FFFFFF" />
-              <path d="M 10 1
-                       C 55 3, 100 0, 140 2
-                       C 175 3, 200 0, 220 2
-                       C 226 2, 229 4, 229 10
-                       C 228 50, 231 90, 229 120
-                       C 228 145, 230 155, 228 157
-                       C 226 160, 222 160, 215 159
-                       C 165 158, 115 161, 65 159
-                       C 35 158, 12 160, 6 159
-                       C 2 159, 0 156, 1 150
-                       C 2 115, -1 75, 1 45
-                       C 2 20, 0 8, 1 4
-                       C 2 1, 5 0, 10 1 Z" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"
-                stroke-linejoin="round" />
-
-              <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#7B61FF" />
-              <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D" />
-              <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#AAAAAA" stroke-width="1.5" />
-
-              <text font-family="'JetBrains Mono', monospace" font-size="22" font-weight="500" fill="#7B61FF">
-                <tspan x="18" y="50">BD Workflows</tspan>
-              </text>
-
-              <text font-family="'JetBrains Mono', monospace" font-size="18" fill="#000000">
-                <tspan x="18" y="80">Deal Evaluation</tspan>
-                <tspan x="18" y="102">Endpoint Analysis</tspan>
-                <tspan x="18" y="124">Trial Forecasting</tspan>
-              </text>
-            </g>
-
-            <!-- BOX 3 - Medical Workflows -->
-            <g transform="translate(172, 350)">
-              <rect x="0" y="0" width="230" height="160" rx="6" fill="#FFFFFF" />
-              <path d="M 7 1
-                       C 60 -1, 105 3, 145 1
-                       C 185 -1, 210 2, 223 1
-                       C 228 1, 230 4, 230 9
-                       C 229 55, 231 95, 229 130
-                       C 228 148, 231 156, 229 158
-                       C 227 161, 223 160, 217 160
-                       C 160 159, 105 162, 55 160
-                       C 30 159, 10 161, 5 159
-                       C 1 158, -1 155, 0 148
-                       C 1 105, -1 65, 1 35
-                       C 2 15, -1 6, 1 3
-                       C 2 1, 4 0, 7 1 Z" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"
-                stroke-linejoin="round" />
-
-              <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#7B61FF" />
-              <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D" />
-              <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#AAAAAA" stroke-width="1.5" />
-
-              <text font-family="'JetBrains Mono', monospace" font-size="22" font-weight="500" fill="#7B61FF">
-                <tspan x="18" y="50">Medical Workflows</tspan>
-              </text>
-
-              <text font-family="'JetBrains Mono', monospace" font-size="18" fill="#000000">
-                <tspan x="18" y="80">Evidence Gap ID</tspan>
-                <tspan x="18" y="102">SoC Benchmarking</tspan>
-                <tspan x="18" y="124">Target Product Profile</tspan>
-              </text>
-            </g>
-
-            <!-- BOX 4 - Custom Workflows -->
-            <g transform="translate(458, 350)">
-              <rect x="0" y="0" width="230" height="160" rx="6" fill="#FFFFFF" />
-              <path d="M 9 2
-                       C 50 0, 95 3, 135 1
-                       C 180 -1, 205 2, 221 1
-                       C 227 1, 230 3, 230 8
-                       C 231 48, 228 92, 230 125
-                       C 231 147, 229 156, 228 158
-                       C 226 161, 221 160, 214 159
-                       C 168 161, 112 158, 62 160
-                       C 32 161, 14 159, 7 158
-                       C 2 158, 0 154, 0 149
-                       C 1 108, -1 68, 1 38
-                       C 2 18, 0 7, 1 4
-                       C 2 1, 5 1, 9 2 Z" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"
-                stroke-linejoin="round" />
-
-              <circle class="window-dot-1" cx="16" cy="16" r="3.5" fill="#7B61FF" />
-              <circle class="window-dot-2" cx="30" cy="16" r="3.5" fill="#3D3D3D" />
-              <circle class="window-dot-3" cx="44" cy="16" r="3.5" fill="none" stroke="#AAAAAA" stroke-width="1.5" />
-
-              <text font-family="'JetBrains Mono', monospace" font-size="22" font-weight="500" fill="#7B61FF">
-                <tspan x="18" y="50">Custom Workflows</tspan>
-              </text>
-
-              <text font-family="'JetBrains Mono', monospace" font-size="18" fill="#000000">
-                <tspan x="18" y="80">Build your own</tspan>
-                <tspan x="18" y="102">workflows tailored to</tspan>
-                <tspan x="18" y="124">your needs...</tspan>
-              </text>
-            </g>
-          </svg>
-        </div>
       </div>
 
       <!-- Product Preview Section -->
       <section id="product-preview" aria-label="Product preview"
-        style="padding: 60px 0; display: flex; justify-content: center;">
+        style="padding: 48px 0 48px 0; display: flex; justify-content: center;">
         <div class="product-preview"
           style="width: 1100px; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.2); border: 1px solid rgba(255,255,255,0.1); background: linear-gradient(160deg, rgba(40, 40, 40, 0.85) 0%, rgba(0, 0, 0, 0.95) 100%); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);">
           <div id="ferma-app-root" style="width: 100%; height: 700px;"></div>
@@ -2781,7 +2465,7 @@
           <!-- Links - same width as hero image -->
           <div class="footer-links"
             style="flex: 0 0 600px; display: flex; justify-content: flex-end; align-items: center; gap: 16px;">
-            <a href="mailto:info@ferma.ai" class="footer-link"
+            <a href="mailto:info@ferma.ai" target="_blank" rel="noopener noreferrer" class="footer-link"
               style="font-size: 16px; color: #9CA3AF; text-decoration: none; transition: color 0.2s;">info@ferma.ai</a>
             <span style="color: #4B5563; font-size: 16px;">•</span>
             <a href="https://agents.ferma.ai/terms-and-conditions" target="_blank" rel="noopener noreferrer"
@@ -2802,6 +2486,7 @@
       </div>
     </footer>
   </div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script type="text/babel">
     const { useState, useEffect } = React;
 
